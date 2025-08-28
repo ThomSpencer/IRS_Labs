@@ -1,0 +1,22 @@
+[1.673s] Invoking command in '/root/ros2_src/pa_warehouse_status': PYTHONPATH=/root/ros2_src/build/pa_warehouse_status/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ros2_src/install/pa_warehouse_status/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/pa_warehouse_status build --build-base /root/ros2_src/build/pa_warehouse_status/build install --record /root/ros2_src/build/pa_warehouse_status/install.log --single-version-externally-managed install_data
+[2.086s] running egg_info
+[2.088s] writing ../build/pa_warehouse_status/pa_warehouse_status.egg-info/PKG-INFO
+[2.088s] writing dependency_links to ../build/pa_warehouse_status/pa_warehouse_status.egg-info/dependency_links.txt
+[2.089s] writing entry points to ../build/pa_warehouse_status/pa_warehouse_status.egg-info/entry_points.txt
+[2.089s] writing requirements to ../build/pa_warehouse_status/pa_warehouse_status.egg-info/requires.txt
+[2.090s] writing top-level names to ../build/pa_warehouse_status/pa_warehouse_status.egg-info/top_level.txt
+[2.095s] reading manifest file '../build/pa_warehouse_status/pa_warehouse_status.egg-info/SOURCES.txt'
+[2.095s] adding license file 'LICENSE'
+[2.096s] writing manifest file '../build/pa_warehouse_status/pa_warehouse_status.egg-info/SOURCES.txt'
+[2.096s] running build
+[2.096s] running build_py
+[2.096s] running install
+[2.097s] running install_lib
+[2.099s] running install_data
+[2.099s] running install_egg_info
+[2.102s] removing '/root/ros2_src/install/pa_warehouse_status/lib/python3.10/site-packages/pa_warehouse_status-0.0.0-py3.10.egg-info' (and everything under it)
+[2.102s] Copying ../build/pa_warehouse_status/pa_warehouse_status.egg-info to /root/ros2_src/install/pa_warehouse_status/lib/python3.10/site-packages/pa_warehouse_status-0.0.0-py3.10.egg-info
+[2.103s] running install_scripts
+[2.140s] Installing pineapple_gossip_bot = pa_warehouse_status.pineapple_gossip_bot:mainplc_hmi_listener script to /root/ros2_src/install/pa_warehouse_status/lib/pa_warehouse_status
+[2.140s] writing list of installed files to '/root/ros2_src/build/pa_warehouse_status/install.log'
+[2.213s] Invoked command in '/root/ros2_src/pa_warehouse_status' returned '0': PYTHONPATH=/root/ros2_src/build/pa_warehouse_status/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ros2_src/install/pa_warehouse_status/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/pa_warehouse_status build --build-base /root/ros2_src/build/pa_warehouse_status/build install --record /root/ros2_src/build/pa_warehouse_status/install.log --single-version-externally-managed install_data
