@@ -1,0 +1,23 @@
+[0.701s] Invoking command in '/root/ros2_src/hand_solo_virtual_nav': PYTHONPATH=/root/ros2_src/build/hand_solo_virtual_nav/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ros2_src/install/hand_solo_virtual_nav/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/hand_solo_virtual_nav build --build-base /root/ros2_src/build/hand_solo_virtual_nav/build install --record /root/ros2_src/build/hand_solo_virtual_nav/install.log --single-version-externally-managed install_data
+[0.908s] running egg_info
+[0.908s] writing ../build/hand_solo_virtual_nav/hand_solo_virtual_nav.egg-info/PKG-INFO
+[0.909s] writing dependency_links to ../build/hand_solo_virtual_nav/hand_solo_virtual_nav.egg-info/dependency_links.txt
+[0.909s] writing entry points to ../build/hand_solo_virtual_nav/hand_solo_virtual_nav.egg-info/entry_points.txt
+[0.909s] writing requirements to ../build/hand_solo_virtual_nav/hand_solo_virtual_nav.egg-info/requires.txt
+[0.910s] writing top-level names to ../build/hand_solo_virtual_nav/hand_solo_virtual_nav.egg-info/top_level.txt
+[0.911s] reading manifest file '../build/hand_solo_virtual_nav/hand_solo_virtual_nav.egg-info/SOURCES.txt'
+[0.911s] adding license file 'LICENSE'
+[0.912s] writing manifest file '../build/hand_solo_virtual_nav/hand_solo_virtual_nav.egg-info/SOURCES.txt'
+[0.912s] running build
+[0.912s] running build_py
+[0.912s] running install
+[0.913s] running install_lib
+[0.915s] running install_data
+[0.915s] copying config/pa_slam_params.yaml -> /root/ros2_src/install/hand_solo_virtual_nav/share/hand_solo_virtual_nav/config
+[0.916s] running install_egg_info
+[0.920s] removing '/root/ros2_src/install/hand_solo_virtual_nav/lib/python3.10/site-packages/hand_solo_virtual_nav-0.0.0-py3.10.egg-info' (and everything under it)
+[0.920s] Copying ../build/hand_solo_virtual_nav/hand_solo_virtual_nav.egg-info to /root/ros2_src/install/hand_solo_virtual_nav/lib/python3.10/site-packages/hand_solo_virtual_nav-0.0.0-py3.10.egg-info
+[0.922s] running install_scripts
+[0.957s] Installing hs_waypoint_follower script to /root/ros2_src/install/hand_solo_virtual_nav/lib/hand_solo_virtual_nav
+[0.958s] writing list of installed files to '/root/ros2_src/build/hand_solo_virtual_nav/install.log'
+[1.003s] Invoked command in '/root/ros2_src/hand_solo_virtual_nav' returned '0': PYTHONPATH=/root/ros2_src/build/hand_solo_virtual_nav/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ros2_src/install/hand_solo_virtual_nav/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/hand_solo_virtual_nav build --build-base /root/ros2_src/build/hand_solo_virtual_nav/build install --record /root/ros2_src/build/hand_solo_virtual_nav/install.log --single-version-externally-managed install_data
