@@ -4,9 +4,14 @@
 /root/ros2_src/install/hand_solo_virtual_nav/lib/python3.10/site-packages/hand_solo_virtual_nav/__pycache__/hs_waypoint_follower.cpython-310.pyc
 /root/ros2_src/install/hand_solo_virtual_nav/share/ament_index/resource_index/packages/hand_solo_virtual_nav
 /root/ros2_src/install/hand_solo_virtual_nav/share/hand_solo_virtual_nav/package.xml
+/root/ros2_src/install/hand_solo_virtual_nav/share/hand_solo_virtual_nav/launch/nav_launch.py
 /root/ros2_src/install/hand_solo_virtual_nav/share/hand_solo_virtual_nav/launch/mapping_launch.py
+/root/ros2_src/install/hand_solo_virtual_nav/share/hand_solo_virtual_nav/config/pa_nav2_params.yaml
 /root/ros2_src/install/hand_solo_virtual_nav/share/hand_solo_virtual_nav/config/pa_slam_params.yaml
+/root/ros2_src/install/hand_solo_virtual_nav/share/hand_solo_virtual_nav/rviz/pa_rviz_nav2.rviz
 /root/ros2_src/install/hand_solo_virtual_nav/share/hand_solo_virtual_nav/rviz/pa_rviz_mapping.rviz
+/root/ros2_src/install/hand_solo_virtual_nav/share/hand_solo_virtual_nav/map/pa_warehouse_map_01.yaml
+/root/ros2_src/install/hand_solo_virtual_nav/share/hand_solo_virtual_nav/map/pa_warehouse_map_01.pgm
 /root/ros2_src/install/hand_solo_virtual_nav/lib/python3.10/site-packages/hand_solo_virtual_nav-0.0.0-py3.10.egg-info/top_level.txt
 /root/ros2_src/install/hand_solo_virtual_nav/lib/python3.10/site-packages/hand_solo_virtual_nav-0.0.0-py3.10.egg-info/PKG-INFO
 /root/ros2_src/install/hand_solo_virtual_nav/lib/python3.10/site-packages/hand_solo_virtual_nav-0.0.0-py3.10.egg-info/entry_points.txt
