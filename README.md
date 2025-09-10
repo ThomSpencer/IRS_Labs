@@ -35,6 +35,18 @@ ros2 launch hand_solo_virtual_nav mapping_launch.py
 ros2 launch hand_solo_virtual_nav nav_launch.py
 ```
 
+# Waypoint Follower
+Make sure you run the autonomous mode first.
+```bash
+ros2 run hand_solo_virtual_nav hs_waypoint_follower
+```
+
+# PLC Status Updater
+Make sure the PLC is on and enabled.
+```bash
+ros2 run pa_warehouse_status plc_hmi_listener 
+```
+
 # Transformation tree
 ```bash
 ros2 run rqt_tf_tree rqt_tf_tree

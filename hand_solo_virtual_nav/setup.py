@@ -26,7 +26,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            'hs_waypoint_follower = hand_solo_virtual_nav.hs_waypoint_follower:main'
+            'hs_waypoint_follower = hand_solo_virtual_nav.hs_waypoint_follower:main',
         ],
     },
 )
