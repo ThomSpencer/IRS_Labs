@@ -189,6 +189,12 @@ def generate_launch_description():
         output='screen'
     )
 
+    waypoint_setter = Node(
+        package='hand_solo_virtual_nav',
+        executable='hs_waypoint_follower',
+        name='waypoint_setter'
+    )
+
     return LaunchDescription([
         # Launch arguments
         declare_use_sim_time,
@@ -211,5 +217,7 @@ def generate_launch_description():
         lifecycle_manager_navigation,
         
         # Visualization
-        rviz
+        rviz,
+        
+        waypoint_setter
     ])

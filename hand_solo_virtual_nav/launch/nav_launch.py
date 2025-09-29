@@ -217,5 +217,7 @@ def generate_launch_description():
         lifecycle_manager_navigation,
         
         # Visualization
-        rviz
+        rviz,
+        
+        waypoint_setter
     ])
