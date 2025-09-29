@@ -1,12 +1,14 @@
 /ros_ws/IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages/pineapple_box_sorter/__init__.py
+/ros_ws/IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages/pineapple_box_sorter/global_localizer.py
 /ros_ws/IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages/pineapple_box_sorter/box_sorter.py
 /ros_ws/IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages/pineapple_box_sorter/hs_waypoint_follower.py
 /ros_ws/IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages/pineapple_box_sorter/__pycache__/__init__.cpython-310.pyc
+/ros_ws/IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages/pineapple_box_sorter/__pycache__/global_localizer.cpython-310.pyc
 /ros_ws/IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages/pineapple_box_sorter/__pycache__/box_sorter.cpython-310.pyc
 /ros_ws/IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages/pineapple_box_sorter/__pycache__/hs_waypoint_follower.cpython-310.pyc
 /ros_ws/IRS_Labs/install/pineapple_box_sorter/share/ament_index/resource_index/packages/pineapple_box_sorter
 /ros_ws/IRS_Labs/install/pineapple_box_sorter/share/pineapple_box_sorter/package.xml
-/ros_ws/IRS_Labs/install/pineapple_box_sorter/share/pineapple_box_sorter/launch
+/ros_ws/IRS_Labs/install/pineapple_box_sorter/share/pineapple_box_sorter/launch/nav_launch.py
 /ros_ws/IRS_Labs/install/pineapple_box_sorter/share/pineapple_box_sorter/config/pa_nav2_params.yaml
 /ros_ws/IRS_Labs/install/pineapple_box_sorter/share/pineapple_box_sorter/rviz/pa_rviz_nav2.rviz
 /ros_ws/IRS_Labs/install/pineapple_box_sorter/share/pineapple_box_sorter/rviz/pa_rviz_mapping.rviz
@@ -20,4 +22,5 @@
 /ros_ws/IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages/pineapple_box_sorter-0.0.0-py3.10.egg-info/zip-safe
 /ros_ws/IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages/pineapple_box_sorter-0.0.0-py3.10.egg-info/SOURCES.txt
 /ros_ws/IRS_Labs/install/pineapple_box_sorter/lib/pineapple_box_sorter/box_sorter
+/ros_ws/IRS_Labs/install/pineapple_box_sorter/lib/pineapple_box_sorter/global_localizer
 /ros_ws/IRS_Labs/install/pineapple_box_sorter/lib/pineapple_box_sorter/hs_waypoint_follower
