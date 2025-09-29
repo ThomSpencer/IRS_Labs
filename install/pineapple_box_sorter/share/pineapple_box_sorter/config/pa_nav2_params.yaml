@@ -1,50 +1,43 @@
 amcl:
   ros__parameters:
-    # Core
     use_sim_time: false
-    global_frame_id: "map"
-    base_frame_id: "virtual_hand_solo/base_link"
-    odom_frame_id: "virtual_hand_solo/odom"
-    scan_topic: "/virtual_hand_solo/scan"
-    laser_model_type: "beam"
-    max_beams: 60
-    laser_max_range: 10.0
-    laser_min_range: 0.1
-    laser_likelihood_max_dist: 5.0
-    lambda_short: 0.1
-
-    # Beam model weights (strong map trust)
-    z_hit: 0.97         # trust correct hits very strongly
-    z_rand: 0.02        # minimal weight for random noise
-    z_short: 0.01       # ignore unexpected short readings
-    z_max: 0.05         # weight for max-range readings (no change needed)
-
-    # Particle filter
-    min_particles: 5000
-    max_particles: 12000
-    pf_err: 0.15        # tighter spread for more decisive convergence
-    pf_z: 0.99
-    resample_interval: 2  # resample more frequently
-    save_pose_rate: 0.5
-    sigma_hit: 0.1
-    transform_tolerance: 1.0
-    update_min_a: 0.05
-    update_min_d: 0.05
-
-    # Motion model noise
-    alpha1: 0.05
-    alpha2: 0.05
-    alpha3: 0.05
-    alpha4: 0.05
-    alpha5: 0.05
-    robot_model_type: "nav2_amcl::DifferentialMotionModel"
-
-    # Beam skipping (helps with partial occlusions)
-    do_beamskip: True
+    alpha1: 0.1
+    alpha2: 0.1
+    alpha3: 0.1
+    alpha4: 0.1
+    alpha5: 0.1
+    base_frame_id: virtual_hand_solo/base_link
     beam_skip_distance: 0.5
     beam_skip_error_threshold: 0.9
     beam_skip_threshold: 0.3
-
+    do_beamskip: True
+    global_frame_id: "map"
+    lambda_short: 0.1
+    laser_likelihood_max_dist: 5.0
+    laser_max_range: 10.0
+    laser_min_range: 0.1
+    laser_model_type: "beam"
+    max_beams: 50
+    max_particles: 7000
+    min_particles: 3500
+    odom_frame_id: "virtual_hand_solo/odom"
+    pf_err: 0.15
+    pf_z: 0.99
+    recovery_alpha_fast: 0.0
+    recovery_alpha_slow: 0.0
+    resample_interval: 2
+    robot_model_type: "nav2_amcl::DifferentialMotionModel"
+    save_pose_rate: 0.5
+    sigma_hit: 0.1
+    tf_broadcast: true
+    transform_tolerance: 1.0
+    update_min_a: 0.05
+    update_min_d: 0.05
+    z_hit: 0.85
+    z_max: 0.05
+    z_rand: 0.15
+    z_short: 0.05
+    scan_topic: /virtual_hand_solo/scan
 
 bt_navigator:
   ros__parameters:

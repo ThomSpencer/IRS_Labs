@@ -10,7 +10,6 @@ setup.py
 ../build/pineapple_box_sorter/pineapple_box_sorter.egg-info/top_level.txt
 ../build/pineapple_box_sorter/pineapple_box_sorter.egg-info/zip-safe
 config/pa_nav2_params.yaml
-launch/nav_launch.py
 map/pa_warehouse_map_01.pgm
 map/pa_warehouse_map_01.yaml
 pineapple_box_sorter/__init__.py

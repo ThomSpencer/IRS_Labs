@@ -1,0 +1,24 @@
+[1.073s] Invoking command in '/ros_ws/IRS_Labs/pineapple_box_sorter': PYTHONPATH=/ros_ws/IRS_Labs/build/pineapple_box_sorter/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ros_ws/IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/pineapple_box_sorter build --build-base /ros_ws/IRS_Labs/build/pineapple_box_sorter/build install --record /ros_ws/IRS_Labs/build/pineapple_box_sorter/install.log --single-version-externally-managed install_data
+[1.415s] running egg_info
+[1.416s] writing ../build/pineapple_box_sorter/pineapple_box_sorter.egg-info/PKG-INFO
+[1.417s] writing dependency_links to ../build/pineapple_box_sorter/pineapple_box_sorter.egg-info/dependency_links.txt
+[1.417s] writing entry points to ../build/pineapple_box_sorter/pineapple_box_sorter.egg-info/entry_points.txt
+[1.417s] writing requirements to ../build/pineapple_box_sorter/pineapple_box_sorter.egg-info/requires.txt
+[1.417s] writing top-level names to ../build/pineapple_box_sorter/pineapple_box_sorter.egg-info/top_level.txt
+[1.422s] reading manifest file '../build/pineapple_box_sorter/pineapple_box_sorter.egg-info/SOURCES.txt'
+[1.422s] adding license file 'LICENSE'
+[1.424s] writing manifest file '../build/pineapple_box_sorter/pineapple_box_sorter.egg-info/SOURCES.txt'
+[1.425s] running build
+[1.425s] running build_py
+[1.426s] running install
+[1.427s] running install_lib
+[1.430s] running install_data
+[1.430s] copying launch/nav_launch.py -> /ros_ws/IRS_Labs/install/pineapple_box_sorter/share/pineapple_box_sorter/launch
+[1.430s] running install_egg_info
+[1.433s] removing '/ros_ws/IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages/pineapple_box_sorter-0.0.0-py3.10.egg-info' (and everything under it)
+[1.434s] Copying ../build/pineapple_box_sorter/pineapple_box_sorter.egg-info to /ros_ws/IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages/pineapple_box_sorter-0.0.0-py3.10.egg-info
+[1.435s] running install_scripts
+[1.478s] Installing box_sorter script to /ros_ws/IRS_Labs/install/pineapple_box_sorter/lib/pineapple_box_sorter
+[1.478s] Installing hs_waypoint_follower script to /ros_ws/IRS_Labs/install/pineapple_box_sorter/lib/pineapple_box_sorter
+[1.478s] writing list of installed files to '/ros_ws/IRS_Labs/build/pineapple_box_sorter/install.log'
+[1.536s] Invoked command in '/ros_ws/IRS_Labs/pineapple_box_sorter' returned '0': PYTHONPATH=/ros_ws/IRS_Labs/build/pineapple_box_sorter/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/ros_ws/IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/pineapple_box_sorter build --build-base /ros_ws/IRS_Labs/build/pineapple_box_sorter/build install --record /ros_ws/IRS_Labs/build/pineapple_box_sorter/install.log --single-version-externally-managed install_data
