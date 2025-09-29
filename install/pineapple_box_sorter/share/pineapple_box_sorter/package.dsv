@@ -1,0 +1,6 @@
+source;share/pineapple_box_sorter/hook/pythonpath.ps1
+source;share/pineapple_box_sorter/hook/pythonpath.dsv
+source;share/pineapple_box_sorter/hook/pythonpath.sh
+source;share/pineapple_box_sorter/hook/ament_prefix_path.ps1
+source;share/pineapple_box_sorter/hook/ament_prefix_path.dsv
+source;share/pineapple_box_sorter/hook/ament_prefix_path.sh
