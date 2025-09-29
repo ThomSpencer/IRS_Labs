@@ -11,7 +11,7 @@ source /opt/ros/humble/setup.bash
 # Make Package
 ```bash
 ros2 pkg create --build-type ament_python --license Apache-2.0 --node-name\
-{NAME_OF_PACKAGE} {NAME_OF_NODE}
+{NAME_OF_NODE} {NAME_OF_PACKAGE}
 ## Config Files for RVIS
 mkdir rviz config launch
 ```
