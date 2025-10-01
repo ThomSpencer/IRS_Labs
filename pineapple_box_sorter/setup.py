@@ -28,7 +28,7 @@ setup(
         'console_scripts': [
             'box_sorter = pineapple_box_sorter.box_sorter:main',
             'global_localizer = pineapple_box_sorter.global_localizer:main',
-            'hs_waypoint_follower = hand_solo_virtual_nav.hs_waypoint_follower:main'
+            'hs_waypoint_follower = pineapple_box_sorter.hs_waypoint_follower:main'
         ],
     },
 )

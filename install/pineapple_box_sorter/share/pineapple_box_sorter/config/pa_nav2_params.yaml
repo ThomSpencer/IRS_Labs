@@ -16,10 +16,10 @@ amcl:
     laser_likelihood_max_dist: 5.0
     laser_max_range: 10.0
     laser_min_range: 0.1
-    laser_model_type: "beam"
+    laser_model_type: "likelihood_field"
     max_beams: 50
-    max_particles: 7000
-    min_particles: 3500
+    max_particles: 2000
+    min_particles: 500
     odom_frame_id: "virtual_hand_solo/odom"
     pf_err: 0.15
     pf_z: 0.99

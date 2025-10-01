@@ -1,0 +1,25 @@
+[2.979s] Invoking command in '/IRS_Labs/hand_solo_arm': PYTHONPATH=/IRS_Labs/build/hand_solo_arm/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/IRS_Labs/install/hand_solo_arm/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/hand_solo_arm build --build-base /IRS_Labs/build/hand_solo_arm/build install --record /IRS_Labs/build/hand_solo_arm/install.log --single-version-externally-managed install_data
+[3.421s] running egg_info
+[3.425s] writing ../build/hand_solo_arm/hand_solo_arm.egg-info/PKG-INFO
+[3.425s] writing dependency_links to ../build/hand_solo_arm/hand_solo_arm.egg-info/dependency_links.txt
+[3.425s] writing entry points to ../build/hand_solo_arm/hand_solo_arm.egg-info/entry_points.txt
+[3.426s] writing requirements to ../build/hand_solo_arm/hand_solo_arm.egg-info/requires.txt
+[3.426s] writing top-level names to ../build/hand_solo_arm/hand_solo_arm.egg-info/top_level.txt
+[3.431s] reading manifest file '../build/hand_solo_arm/hand_solo_arm.egg-info/SOURCES.txt'
+[3.432s] adding license file 'LICENSE'
+[3.433s] writing manifest file '../build/hand_solo_arm/hand_solo_arm.egg-info/SOURCES.txt'
+[3.434s] running build
+[3.435s] running build_py
+[3.435s] copying hand_solo_arm/hs_pick_place.py -> /IRS_Labs/build/hand_solo_arm/build/lib/hand_solo_arm
+[3.435s] running install
+[3.435s] running install_lib
+[3.436s] copying /IRS_Labs/build/hand_solo_arm/build/lib/hand_solo_arm/hs_pick_place.py -> /IRS_Labs/install/hand_solo_arm/lib/python3.10/site-packages/hand_solo_arm
+[3.438s] byte-compiling /IRS_Labs/install/hand_solo_arm/lib/python3.10/site-packages/hand_solo_arm/hs_pick_place.py to hs_pick_place.cpython-310.pyc
+[3.441s] running install_data
+[3.441s] running install_egg_info
+[3.445s] removing '/IRS_Labs/install/hand_solo_arm/lib/python3.10/site-packages/hand_solo_arm-0.0.0-py3.10.egg-info' (and everything under it)
+[3.445s] Copying ../build/hand_solo_arm/hand_solo_arm.egg-info to /IRS_Labs/install/hand_solo_arm/lib/python3.10/site-packages/hand_solo_arm-0.0.0-py3.10.egg-info
+[3.446s] running install_scripts
+[3.501s] Installing hs_pick_place script to /IRS_Labs/install/hand_solo_arm/lib/hand_solo_arm
+[3.502s] writing list of installed files to '/IRS_Labs/build/hand_solo_arm/install.log'
+[3.580s] Invoked command in '/IRS_Labs/hand_solo_arm' returned '0': PYTHONPATH=/IRS_Labs/build/hand_solo_arm/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/IRS_Labs/install/hand_solo_arm/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/hand_solo_arm build --build-base /IRS_Labs/build/hand_solo_arm/build install --record /IRS_Labs/build/hand_solo_arm/install.log --single-version-externally-managed install_data

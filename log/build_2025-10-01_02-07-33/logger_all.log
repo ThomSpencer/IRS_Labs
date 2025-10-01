@@ -1,0 +1,174 @@
+[0.316s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--packages-select', 'pineapple_box_sorter']
+[0.316s] DEBUG:colcon:Parsed command line arguments: Namespace(log_base=None, log_level=None, verb_name='build', build_base='build', install_base='install', merge_install=False, symlink_install=False, test_result_base=None, continue_on_error=False, executor='parallel', parallel_workers=16, event_handlers=None, ignore_user_meta=False, metas=['./colcon.meta'], base_paths=['.'], packages_ignore=None, packages_ignore_regex=None, paths=None, packages_up_to=None, packages_up_to_regex=None, packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_select_by_dep=None, packages_skip_by_dep=None, packages_skip_up_to=None, packages_select_build_failed=False, packages_skip_build_finished=False, packages_select_test_failures=False, packages_skip_test_passed=False, packages_select=['pineapple_box_sorter'], packages_skip=None, packages_select_regex=None, packages_skip_regex=None, packages_start=None, packages_end=None, cmake_args=None, cmake_target=None, cmake_target_skip_unavailable=False, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, ament_cmake_args=None, catkin_cmake_args=None, catkin_skip_building_tests=False, mixin_files=None, mixin=None, verb_parser=<colcon_mixin.mixin.mixin_argument.MixinArgumentDecorator object at 0x7719687473a0>, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7719687465f0>, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7719687465f0>>, mixin_verb=('build',))
+[0.569s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.571s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/Gazebo.meta'
+[0.572s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/fastdds.meta'
+[0.573s] INFO:colcon.colcon_metadata.package_discovery.colcon_meta:Using configuration from '/root/.colcon/metadata/default/fastrtps.meta'
+[0.573s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.573s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.573s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.573s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.573s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.573s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/IRS_Labs'
+[0.574s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.574s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.574s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.574s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.574s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.574s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.574s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.574s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.574s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.600s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.600s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.600s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.600s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.600s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.601s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.601s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.601s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.601s] Level 1:colcon.colcon_core.package_identification:_identify(hand_solo_arm) by extensions ['ignore', 'ignore_ament_install']
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(hand_solo_arm) by extension 'ignore'
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(hand_solo_arm) by extension 'ignore_ament_install'
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(hand_solo_arm) by extensions ['colcon_pkg']
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(hand_solo_arm) by extension 'colcon_pkg'
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(hand_solo_arm) by extensions ['colcon_meta']
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(hand_solo_arm) by extension 'colcon_meta'
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(hand_solo_arm) by extensions ['ros']
+[0.602s] Level 1:colcon.colcon_core.package_identification:_identify(hand_solo_arm) by extension 'ros'
+[0.607s] DEBUG:colcon.colcon_core.package_identification:Package 'hand_solo_arm' with type 'ros.ament_python' and name 'hand_solo_arm'
+[0.607s] Level 1:colcon.colcon_core.package_identification:_identify(hand_solo_virtual_nav) by extensions ['ignore', 'ignore_ament_install']
+[0.607s] Level 1:colcon.colcon_core.package_identification:_identify(hand_solo_virtual_nav) by extension 'ignore'
+[0.607s] Level 1:colcon.colcon_core.package_identification:_identify(hand_solo_virtual_nav) by extension 'ignore_ament_install'
+[0.607s] Level 1:colcon.colcon_core.package_identification:_identify(hand_solo_virtual_nav) by extensions ['colcon_pkg']
+[0.607s] Level 1:colcon.colcon_core.package_identification:_identify(hand_solo_virtual_nav) by extension 'colcon_pkg'
+[0.607s] Level 1:colcon.colcon_core.package_identification:_identify(hand_solo_virtual_nav) by extensions ['colcon_meta']
+[0.607s] Level 1:colcon.colcon_core.package_identification:_identify(hand_solo_virtual_nav) by extension 'colcon_meta'
+[0.608s] Level 1:colcon.colcon_core.package_identification:_identify(hand_solo_virtual_nav) by extensions ['ros']
+[0.608s] Level 1:colcon.colcon_core.package_identification:_identify(hand_solo_virtual_nav) by extension 'ros'
+[0.609s] DEBUG:colcon.colcon_core.package_identification:Package 'hand_solo_virtual_nav' with type 'ros.ament_python' and name 'hand_solo_virtual_nav'
+[0.609s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.609s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.609s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.609s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.609s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.610s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.610s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extensions ['ignore', 'ignore_ament_install']
+[0.610s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extension 'ignore'
+[0.610s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extension 'ignore_ament_install'
+[0.610s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extensions ['colcon_pkg']
+[0.610s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extension 'colcon_pkg'
+[0.610s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extensions ['colcon_meta']
+[0.610s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extension 'colcon_meta'
+[0.610s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extensions ['ros']
+[0.610s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extension 'ros'
+[0.610s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extensions ['cmake', 'python']
+[0.610s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extension 'cmake'
+[0.610s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extension 'python'
+[0.610s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extensions ['python_setup_py']
+[0.610s] Level 1:colcon.colcon_core.package_identification:_identify(maps) by extension 'python_setup_py'
+[0.610s] Level 1:colcon.colcon_core.package_identification:_identify(maps/pa_warehouse_map_01) by extensions ['ignore', 'ignore_ament_install']
+[0.611s] Level 1:colcon.colcon_core.package_identification:_identify(maps/pa_warehouse_map_01) by extension 'ignore'
+[0.611s] Level 1:colcon.colcon_core.package_identification:_identify(maps/pa_warehouse_map_01) by extension 'ignore_ament_install'
+[0.611s] Level 1:colcon.colcon_core.package_identification:_identify(maps/pa_warehouse_map_01) by extensions ['colcon_pkg']
+[0.611s] Level 1:colcon.colcon_core.package_identification:_identify(maps/pa_warehouse_map_01) by extension 'colcon_pkg'
+[0.611s] Level 1:colcon.colcon_core.package_identification:_identify(maps/pa_warehouse_map_01) by extensions ['colcon_meta']
+[0.611s] Level 1:colcon.colcon_core.package_identification:_identify(maps/pa_warehouse_map_01) by extension 'colcon_meta'
+[0.611s] Level 1:colcon.colcon_core.package_identification:_identify(maps/pa_warehouse_map_01) by extensions ['ros']
+[0.611s] Level 1:colcon.colcon_core.package_identification:_identify(maps/pa_warehouse_map_01) by extension 'ros'
+[0.611s] Level 1:colcon.colcon_core.package_identification:_identify(maps/pa_warehouse_map_01) by extensions ['cmake', 'python']
+[0.611s] Level 1:colcon.colcon_core.package_identification:_identify(maps/pa_warehouse_map_01) by extension 'cmake'
+[0.611s] Level 1:colcon.colcon_core.package_identification:_identify(maps/pa_warehouse_map_01) by extension 'python'
+[0.611s] Level 1:colcon.colcon_core.package_identification:_identify(maps/pa_warehouse_map_01) by extensions ['python_setup_py']
+[0.611s] Level 1:colcon.colcon_core.package_identification:_identify(maps/pa_warehouse_map_01) by extension 'python_setup_py'
+[0.611s] Level 1:colcon.colcon_core.package_identification:_identify(pa_warehouse_status) by extensions ['ignore', 'ignore_ament_install']
+[0.611s] Level 1:colcon.colcon_core.package_identification:_identify(pa_warehouse_status) by extension 'ignore'
+[0.611s] Level 1:colcon.colcon_core.package_identification:_identify(pa_warehouse_status) by extension 'ignore_ament_install'
+[0.612s] Level 1:colcon.colcon_core.package_identification:_identify(pa_warehouse_status) by extensions ['colcon_pkg']
+[0.612s] Level 1:colcon.colcon_core.package_identification:_identify(pa_warehouse_status) by extension 'colcon_pkg'
+[0.612s] Level 1:colcon.colcon_core.package_identification:_identify(pa_warehouse_status) by extensions ['colcon_meta']
+[0.612s] Level 1:colcon.colcon_core.package_identification:_identify(pa_warehouse_status) by extension 'colcon_meta'
+[0.612s] Level 1:colcon.colcon_core.package_identification:_identify(pa_warehouse_status) by extensions ['ros']
+[0.612s] Level 1:colcon.colcon_core.package_identification:_identify(pa_warehouse_status) by extension 'ros'
+[0.613s] DEBUG:colcon.colcon_core.package_identification:Package 'pa_warehouse_status' with type 'ros.ament_python' and name 'pa_warehouse_status'
+[0.613s] Level 1:colcon.colcon_core.package_identification:_identify(pineapple_box_sorter) by extensions ['ignore', 'ignore_ament_install']
+[0.613s] Level 1:colcon.colcon_core.package_identification:_identify(pineapple_box_sorter) by extension 'ignore'
+[0.613s] Level 1:colcon.colcon_core.package_identification:_identify(pineapple_box_sorter) by extension 'ignore_ament_install'
+[0.613s] Level 1:colcon.colcon_core.package_identification:_identify(pineapple_box_sorter) by extensions ['colcon_pkg']
+[0.613s] Level 1:colcon.colcon_core.package_identification:_identify(pineapple_box_sorter) by extension 'colcon_pkg'
+[0.614s] Level 1:colcon.colcon_core.package_identification:_identify(pineapple_box_sorter) by extensions ['colcon_meta']
+[0.614s] Level 1:colcon.colcon_core.package_identification:_identify(pineapple_box_sorter) by extension 'colcon_meta'
+[0.614s] Level 1:colcon.colcon_core.package_identification:_identify(pineapple_box_sorter) by extensions ['ros']
+[0.614s] Level 1:colcon.colcon_core.package_identification:_identify(pineapple_box_sorter) by extension 'ros'
+[0.622s] DEBUG:colcon.colcon_core.package_identification:Package 'pineapple_box_sorter' with type 'ros.ament_python' and name 'pineapple_box_sorter'
+[0.622s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.622s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.622s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.623s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.623s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.667s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'hand_solo_arm' in 'hand_solo_arm'
+[0.667s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'hand_solo_virtual_nav' in 'hand_solo_virtual_nav'
+[0.667s] INFO:colcon.colcon_core.package_selection:Skipping not selected package 'pa_warehouse_status' in 'pa_warehouse_status'
+[0.668s] Level 5:colcon.colcon_core.verb:set package 'pineapple_box_sorter' build argument 'cmake_args' from command line to 'None'
+[0.668s] Level 5:colcon.colcon_core.verb:set package 'pineapple_box_sorter' build argument 'cmake_target' from command line to 'None'
+[0.668s] Level 5:colcon.colcon_core.verb:set package 'pineapple_box_sorter' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[0.668s] Level 5:colcon.colcon_core.verb:set package 'pineapple_box_sorter' build argument 'cmake_clean_cache' from command line to 'False'
+[0.668s] Level 5:colcon.colcon_core.verb:set package 'pineapple_box_sorter' build argument 'cmake_clean_first' from command line to 'False'
+[0.668s] Level 5:colcon.colcon_core.verb:set package 'pineapple_box_sorter' build argument 'cmake_force_configure' from command line to 'False'
+[0.668s] Level 5:colcon.colcon_core.verb:set package 'pineapple_box_sorter' build argument 'ament_cmake_args' from command line to 'None'
+[0.668s] Level 5:colcon.colcon_core.verb:set package 'pineapple_box_sorter' build argument 'catkin_cmake_args' from command line to 'None'
+[0.668s] Level 5:colcon.colcon_core.verb:set package 'pineapple_box_sorter' build argument 'catkin_skip_building_tests' from command line to 'False'
+[0.669s] DEBUG:colcon.colcon_core.verb:Building package 'pineapple_box_sorter' with the following arguments: {'ament_cmake_args': None, 'build_base': '/IRS_Labs/build/pineapple_box_sorter', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/IRS_Labs/install/pineapple_box_sorter', 'merge_install': False, 'path': '/IRS_Labs/pineapple_box_sorter', 'symlink_install': False, 'test_result_base': None}
+[0.669s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[0.672s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[0.673s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/IRS_Labs/pineapple_box_sorter' with build type 'ament_python'
+[0.674s] Level 1:colcon.colcon_core.shell:create_environment_hook('pineapple_box_sorter', 'ament_prefix_path')
+[0.683s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[0.684s] INFO:colcon.colcon_core.shell:Creating environment hook '/IRS_Labs/install/pineapple_box_sorter/share/pineapple_box_sorter/hook/ament_prefix_path.ps1'
+[0.685s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/IRS_Labs/install/pineapple_box_sorter/share/pineapple_box_sorter/hook/ament_prefix_path.dsv'
+[0.687s] INFO:colcon.colcon_core.shell:Creating environment hook '/IRS_Labs/install/pineapple_box_sorter/share/pineapple_box_sorter/hook/ament_prefix_path.sh'
+[0.689s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[0.689s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.162s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/IRS_Labs/pineapple_box_sorter'
+[1.163s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.163s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.859s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/IRS_Labs/pineapple_box_sorter': PYTHONPATH=/IRS_Labs/build/pineapple_box_sorter/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/pineapple_box_sorter build --build-base /IRS_Labs/build/pineapple_box_sorter/build install --record /IRS_Labs/build/pineapple_box_sorter/install.log --single-version-externally-managed install_data
+[2.441s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/IRS_Labs/pineapple_box_sorter' returned '0': PYTHONPATH=/IRS_Labs/build/pineapple_box_sorter/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/pineapple_box_sorter build --build-base /IRS_Labs/build/pineapple_box_sorter/build install --record /IRS_Labs/build/pineapple_box_sorter/install.log --single-version-externally-managed install_data
+[2.449s] Level 1:colcon.colcon_core.environment:checking '/IRS_Labs/install/pineapple_box_sorter' for CMake module files
+[2.451s] Level 1:colcon.colcon_core.environment:checking '/IRS_Labs/install/pineapple_box_sorter' for CMake config files
+[2.454s] Level 1:colcon.colcon_core.environment:checking '/IRS_Labs/install/pineapple_box_sorter/lib'
+[2.455s] Level 1:colcon.colcon_core.environment:checking '/IRS_Labs/install/pineapple_box_sorter/bin'
+[2.455s] Level 1:colcon.colcon_core.environment:checking '/IRS_Labs/install/pineapple_box_sorter/lib/pkgconfig/pineapple_box_sorter.pc'
+[2.456s] Level 1:colcon.colcon_core.environment:checking '/IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages'
+[2.456s] Level 1:colcon.colcon_core.shell:create_environment_hook('pineapple_box_sorter', 'pythonpath')
+[2.457s] INFO:colcon.colcon_core.shell:Creating environment hook '/IRS_Labs/install/pineapple_box_sorter/share/pineapple_box_sorter/hook/pythonpath.ps1'
+[2.459s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/IRS_Labs/install/pineapple_box_sorter/share/pineapple_box_sorter/hook/pythonpath.dsv'
+[2.461s] INFO:colcon.colcon_core.shell:Creating environment hook '/IRS_Labs/install/pineapple_box_sorter/share/pineapple_box_sorter/hook/pythonpath.sh'
+[2.463s] Level 1:colcon.colcon_core.environment:checking '/IRS_Labs/install/pineapple_box_sorter/bin'
+[2.463s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(pineapple_box_sorter)
+[2.465s] INFO:colcon.colcon_core.shell:Creating package script '/IRS_Labs/install/pineapple_box_sorter/share/pineapple_box_sorter/package.ps1'
+[2.468s] INFO:colcon.colcon_core.shell:Creating package descriptor '/IRS_Labs/install/pineapple_box_sorter/share/pineapple_box_sorter/package.dsv'
+[2.470s] INFO:colcon.colcon_core.shell:Creating package script '/IRS_Labs/install/pineapple_box_sorter/share/pineapple_box_sorter/package.sh'
+[2.473s] INFO:colcon.colcon_core.shell:Creating package script '/IRS_Labs/install/pineapple_box_sorter/share/pineapple_box_sorter/package.bash'
+[2.475s] INFO:colcon.colcon_core.shell:Creating package script '/IRS_Labs/install/pineapple_box_sorter/share/pineapple_box_sorter/package.zsh'
+[2.477s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/IRS_Labs/install/pineapple_box_sorter/share/colcon-core/packages/pineapple_box_sorter)
+[2.479s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[2.480s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[2.480s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[2.481s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[2.501s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.notify_send': Could not find 'notify-send'
+[2.502s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[2.502s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[2.502s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[2.510s] DEBUG:colcon.colcon_notification.desktop_notification.notify2:Failed to initialize notify2: org.freedesktop.DBus.Error.Spawn.ExecFailed: /usr/bin/dbus-launch terminated abnormally without any error message
+[2.512s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[2.514s] INFO:colcon.colcon_core.shell:Creating prefix script '/IRS_Labs/install/local_setup.ps1'
+[2.520s] INFO:colcon.colcon_core.shell:Creating prefix util module '/IRS_Labs/install/_local_setup_util_ps1.py'
+[2.525s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/IRS_Labs/install/setup.ps1'
+[2.530s] INFO:colcon.colcon_core.shell:Creating prefix script '/IRS_Labs/install/local_setup.sh'
+[2.532s] INFO:colcon.colcon_core.shell:Creating prefix util module '/IRS_Labs/install/_local_setup_util_sh.py'
+[2.535s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/IRS_Labs/install/setup.sh'
+[2.539s] INFO:colcon.colcon_core.shell:Creating prefix script '/IRS_Labs/install/local_setup.bash'
+[2.541s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/IRS_Labs/install/setup.bash'
+[2.545s] INFO:colcon.colcon_core.shell:Creating prefix script '/IRS_Labs/install/local_setup.zsh'
+[2.547s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/IRS_Labs/install/setup.zsh'
