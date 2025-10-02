@@ -13,13 +13,13 @@ amcl:
     do_beamskip: false
     global_frame_id: "map"
     lambda_short: 0.1
-    laser_likelihood_max_dist: 2.0
+    laser_likelihood_max_dist: 3.0
     laser_max_range: 10.0
     laser_min_range: 0.1
     laser_model_type: "likelihood_field"
     max_beams: 60
-    max_particles: 2000
-    min_particles: 500
+    max_particles: 5000
+    min_particles: 2000
     odom_frame_id: "virtual_hand_solo/odom"
     pf_err: 0.05
     pf_z: 0.99
@@ -347,3 +347,18 @@ velocity_smoother:
     max_decel: [-1.5, 0.0, -0.5]
     deadband_velocity: [0.0, 0.0, 0.0]
     velocity_timeout: 1.0
+
+slam_toolbox:
+  ros__parameters:
+    use_sim_time: false
+    mode: "localization"
+    map_start_pose: [0.0, 0.0, 0.0]
+    odom_frame: "virtual_hand_solo/odom"
+    base_frame: "virtual_hand_solo/base_link"
+    map_frame: "map"
+    scan_topic: "/virtual_hand_solo/scan"
+    resolution: 0.05
+    max_laser_range: 10.0
+    transform_publish_period: 0.05
+    publish_map: True
+    publish_pose: True

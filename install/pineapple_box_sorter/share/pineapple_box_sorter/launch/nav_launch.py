@@ -11,7 +11,7 @@ def generate_launch_description():
     
     # File paths
     rviz_cfg = PathJoinSubstitution([pkg_share, 'rviz', 'pa_rviz_nav2.rviz'])
-    map_yaml = PathJoinSubstitution([pkg_share, 'map', 'pa_warehouse_map_01.yaml'])
+    map_yaml = PathJoinSubstitution([pkg_share, 'map', 'pa_warehouse_map_02.data'])
     nav2_params = PathJoinSubstitution([pkg_share, 'config', 'pa_nav2_params.yaml'])
     
     # Launch arguments (optional - for flexibility)
@@ -48,19 +48,6 @@ def generate_launch_description():
             nav2_params,
             {'yaml_filename': map_yaml,
              'use_sim_time': use_sim_time}
-        ]
-    )
-
-    # AMCL - Lifecycle Node
-    amcl = LifecycleNode(
-        package='nav2_amcl',
-        executable='amcl',
-        name='amcl',
-        namespace='',
-        output='screen',
-        parameters=[
-            nav2_params,
-            {'use_sim_time': use_sim_time}
         ]
     )
 
@@ -146,16 +133,45 @@ def generate_launch_description():
         ]
     )
 
-    # Lifecycle Manager for Localization
-    lifecycle_manager_localization = Node(
+    # SLAM Toolbox Node
+    slam_toolbox = LifecycleNode(
+        package='slam_toolbox',
+        executable='sync_slam_toolbox_node',  # or 'lifelong_slam_toolbox_node'
+        name='slam_toolbox',
+        output='screen',
+        namespace='',
+        parameters=[
+            nav2_params,
+            {
+             'use_sim_time': use_sim_time,
+             'map_file_name': map_yaml,
+             'map_start_pose': [0.0, 0.0, 0.0],  # Optional: set initial pose
+             'use_sim_time': False,
+             'mode': "localization",
+             'map_start_pose': [0.0, 0.0, 0.0],
+             'odom_frame': "virtual_hand_solo/odom",
+             'base_frame': "virtual_hand_solo/base_link",
+             'map_frame': "map",
+             'scan_topic': "/virtual_hand_solo/scan",
+             'resolution': 0.05,
+             'max_laser_range': 10.0,
+             'transform_publish_period': 0.05,
+             'publish_map': True,
+             'publish_pose': True,
+             }
+        ]
+    )
+
+    # Lifecycle Manager for SLAM (optional, if you want to manage SLAM node lifecycle)
+    lifecycle_manager_slam = Node(
         package='nav2_lifecycle_manager',
         executable='lifecycle_manager',
-        name='lifecycle_manager_localization',
+        name='lifecycle_manager_slam',
         output='screen',
         parameters=[
             {'use_sim_time': use_sim_time},
             {'autostart': True},
-            {'node_names': ['map_server', 'amcl']}
+            {'node_names': ['slam_toolbox']}
         ]
     )
 
@@ -195,12 +211,11 @@ def generate_launch_description():
         
         # TF
         static_tf,
-        
-        # Localization Stack
-        map_server,
-        amcl,
-        lifecycle_manager_localization,
-        
+
+        # SLAM Stack
+        slam_toolbox,
+        lifecycle_manager_slam,
+
         # Navigation Stack
         controller_server,
         planner_server,
@@ -212,6 +227,4 @@ def generate_launch_description():
         
         # Visualization
         rviz,
-        
-        #misc
     ])
