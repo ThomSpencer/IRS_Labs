@@ -10,24 +10,28 @@ from nav2_msgs.action import NavigateToPose
 
 from moveit_msgs.action import MoveGroup
 from moveit_msgs.msg import MotionPlanRequest, Constraints, JointConstraint
+from sensor_msgs.msg import JointState
+from moveit_msgs.msg import RobotState
 
-conveyorA = [1.5,-1.0,0.2]
-conveyorB = [1.5, 0.0,0.0]
-conveyorC = [1.5, 1.0,0.0]
-conveyor_approach = [-1.0,0.0,0.0]
+import threading
 
-store = [31.0,-4.5,-math.pi/2]
-store_approach = [31.0,-1.5,-math.pi/2]
+conveyorA_pos = [1.5,-1.0,0.0]
+conveyorB_pos = [1.5, 0.0,0.0]
+conveyorC_pos = [1.5, 1.0,0.0]
+conveyor_approach_pos = [-1.0,0.0,0.0]
+
+store_pos = [31.0,-4.5,-math.pi/2]
+store_approach_pos = [31.0,-1.5,-math.pi/2]
 
 
-movement = [0.0, 0.0, 0.0, 0.0, -1.5708, 0.0]
-readyForPickup = [0.0, 0.0, 0.872665, 0.436332, 1.74533, 0.0]
-pickupA = [0.0, 0.523599, 1.309, -0.349066, 1.5708, 0.296706]
-pickupB = [0.0, 0.523599, 1.309, -0.349066, 1.5708, 0.296706]
-pickupC = [0.0, 0.610865, 1.309, -0.401426, 1.5708, 0.0]
+movement_arm = [0.0, 0.0, 0.0, 0.0, -1.5708, 0.0]
+readyForPickup_arm = [0.0, 0.0, 0.872665, 0.436332, 1.74533, 0.0]
+pickupA_arm = [0.0, 0.523599, 1.309, -0.349066, 1.5708, 0.296706]
+pickupB_arm = [0.0, 0.523599, 1.309, -0.349066, 1.5708, 0.296706]
+pickupC_arm = [0.0, 0.610865, 1.309, -0.401426, 1.5708, 0.0]
 
-readyForStore = []
-store = []
+readyForStore_arm = [0.0, 0.0, 1.39626, 0.0, 1.72788, 0.0]
+store_arm = [0.0, 0.349066, 1.309, 0.0, 1.5708, 0.0]
 
 # --- Helper function to build a PoseStamped ---
 def make_pose(x: float|int, y: float|int, yaw: float|int) -> PoseStamped:
@@ -52,6 +56,17 @@ def main():
     # 1. Initialise ROS2 and create a node
     rclpy.init()
     node = rclpy.create_node('hs_waypoint_follower_nav2pose')
+    node.latest_joint_state = None
+    
+    def _joint_state_cb(msg: JointState):
+        node.latest_joint_state = msg
+    
+    node.joint_sub = node.create_subscription(
+        JointState,
+        '/joint_states',
+        _joint_state_cb,
+        10
+    )
     
     JOINT_NAMES: List[str] = ['joint_1','joint_2','joint_3','joint_4','joint_5','joint_6']
     PLANNING_GROUP: str = 'tmr_arm'
@@ -118,12 +133,24 @@ def main():
         res_fut = handle.get_result_async()
         rclpy.spin_until_future_complete(node, res_fut)
         res = res_fut.result()
+        if res is None:
+            node.get_logger().error('Result is none.')
+            return False
+        node.get_logger().info(f"Results: {res.status}")
         return bool(res and res.status == 4)  # 4 = STATUS_SUCCEEDED
     
     
-    def _goal_from_joints(self, joints: List[float]) -> MoveGroup.Goal:
+    def _goal_from_joints(node, joints: List[float]) -> MoveGroup.Goal:
         goal = MoveGroup.Goal()
         req = MotionPlanRequest()
+        
+        if node.latest_joint_state:
+            start_state = RobotState()
+            start_state.joint_state = node.latest_joint_state
+            req.start_state = start_state
+        else:
+            node.get_logger().warn("No joint state received yet; using default start state.")   
+        
         req.group_name = PLANNING_GROUP
         req.num_planning_attempts = 10
         req.allowed_planning_time = 5.0
@@ -144,31 +171,56 @@ def main():
         goal.request = req
         goal.planning_options.plan_only = False  # plan + execute
         return goal
+
+
+    node.get_logger().info('Precalculating positions.')
+    # --- precoded positions
+    a_pos = make_pose(*conveyorA_pos)
+    b_pos = make_pose(*conveyorB_pos)
+    c_pos = make_pose(*conveyorC_pos)
+    conv_appr = make_pose(*conveyor_approach_pos)
+
+    drop_pos = make_pose(*store_pos)
+    drop_appr = make_pose(*store_approach_pos)
     
+    node.get_logger().info('Ready for movement.')
     
     # --- Hard-coded waypoints for this lab. Edit this section in the code and make it your own ---
-    wait_seconds = 5
+    wait_seconds = 2
 
-    if not send_and_wait_arm(node, movement): return
-    node.get_logger().info(f'Waiting {wait_seconds:.0f} seconds at movement arm pos...')
-    time.sleep(wait_seconds)
-        
-
-    wp1 = make_pose(*store_approach)          # Sample goal pose. Make your own! You can create multiple way points
-    send_and_wait_movement(wp1)
-
-    # 4. Pause to simulate "waiting at waypoint"
-    node.get_logger().info(f'Waiting {wait_seconds:.0f} seconds at waypoint 1...')
+    # Move to conv appr
+    if not send_and_wait_arm(node, movement_arm): raise(Exception("ARM Planner error 1"))
+    send_and_wait_movement(conv_appr)
+    node.get_logger().info(f'Waiting {wait_seconds:.0f} seconds at movement arm pos...')       
     time.sleep(wait_seconds)
     
-    wp1 = make_pose(*store)          # Sample goal pose. Make your own! You can create multiple way points
-    send_and_wait_movement(wp1)
-
-    # 4. Pause to simulate "waiting at waypoint"
-    node.get_logger().info(f'Waiting {wait_seconds:.0f} seconds at waypoint 1...')
+    
+    # Move to conv 
+    if not send_and_wait_arm(node, pickupC_arm): raise(Exception("ARM Planner error 2"))
+    send_and_wait_movement(c_pos)
+    node.get_logger().info(f'Waiting {wait_seconds:.0f} seconds at Conveyor C...')       
+    time.sleep(wait_seconds)
+    
+    # Move to dropoff appr 
+    if not send_and_wait_arm(node, movement_arm): raise(Exception("ARM Planner error 3"))
+    send_and_wait_movement(drop_appr)
+    if not send_and_wait_arm(node, readyForStore_arm): raise(Exception("ARM Planner error 4"))
+    node.get_logger().info(f'Waiting {wait_seconds:.0f} seconds at Dropoff Appr...')       
+    time.sleep(wait_seconds)
+    
+    
+    # Move to dropoff  
+    if not send_and_wait_arm(node, store_arm): raise(Exception("ARM Planner error 5"))
+    send_and_wait_movement(drop_pos)
+    node.get_logger().info(f'Waiting {wait_seconds:.0f} seconds at Dropoff...')       
     time.sleep(wait_seconds)
 
 
+    # Move to conv appr
+    if not send_and_wait_arm(node, movement_arm): raise(Exception("ARM Planner error 6"))
+    send_and_wait_movement(conv_appr)
+    node.get_logger().info(f'Waiting {wait_seconds:.0f} seconds at movement arm pos...')       
+    time.sleep(wait_seconds)
     
    # --- Your custom code ends here ---
 

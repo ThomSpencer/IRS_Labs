@@ -1,0 +1,209 @@
+[0.000000] (-) TimerEvent: {}
+[0.003299] (hand_solo_arm) JobQueued: {'identifier': 'hand_solo_arm', 'dependencies': OrderedDict()}
+[0.003696] (hand_solo_virtual_nav) JobQueued: {'identifier': 'hand_solo_virtual_nav', 'dependencies': OrderedDict()}
+[0.003836] (pa_warehouse_status) JobQueued: {'identifier': 'pa_warehouse_status', 'dependencies': OrderedDict()}
+[0.003955] (pineapple_box_sorter) JobQueued: {'identifier': 'pineapple_box_sorter', 'dependencies': OrderedDict()}
+[0.004050] (hand_solo_arm) JobStarted: {'identifier': 'hand_solo_arm'}
+[0.065706] (hand_solo_virtual_nav) JobStarted: {'identifier': 'hand_solo_virtual_nav'}
+[0.093189] (-) TimerEvent: {}
+[0.105375] (pa_warehouse_status) JobStarted: {'identifier': 'pa_warehouse_status'}
+[0.138570] (pineapple_box_sorter) JobStarted: {'identifier': 'pineapple_box_sorter'}
+[0.195727] (-) TimerEvent: {}
+[0.297264] (-) TimerEvent: {}
+[0.398932] (-) TimerEvent: {}
+[0.500649] (-) TimerEvent: {}
+[0.601909] (-) TimerEvent: {}
+[0.703404] (-) TimerEvent: {}
+[0.804718] (-) TimerEvent: {}
+[0.906365] (-) TimerEvent: {}
+[1.008126] (-) TimerEvent: {}
+[1.109719] (-) TimerEvent: {}
+[1.211048] (-) TimerEvent: {}
+[1.312894] (-) TimerEvent: {}
+[1.414678] (-) TimerEvent: {}
+[1.517382] (-) TimerEvent: {}
+[1.618985] (-) TimerEvent: {}
+[1.719877] (-) TimerEvent: {}
+[1.821159] (-) TimerEvent: {}
+[1.922878] (-) TimerEvent: {}
+[2.024312] (-) TimerEvent: {}
+[2.126040] (-) TimerEvent: {}
+[2.227202] (-) TimerEvent: {}
+[2.328340] (-) TimerEvent: {}
+[2.429786] (-) TimerEvent: {}
+[2.531476] (-) TimerEvent: {}
+[2.632773] (-) TimerEvent: {}
+[2.734062] (-) TimerEvent: {}
+[2.835984] (-) TimerEvent: {}
+[2.937409] (-) TimerEvent: {}
+[3.040233] (-) TimerEvent: {}
+[3.141769] (-) TimerEvent: {}
+[3.242638] (-) TimerEvent: {}
+[3.343828] (-) TimerEvent: {}
+[3.445467] (-) TimerEvent: {}
+[3.547013] (-) TimerEvent: {}
+[3.648559] (-) TimerEvent: {}
+[3.749421] (-) TimerEvent: {}
+[3.850887] (-) TimerEvent: {}
+[3.952306] (-) TimerEvent: {}
+[4.054261] (-) TimerEvent: {}
+[4.156036] (-) TimerEvent: {}
+[4.256896] (-) TimerEvent: {}
+[4.358601] (-) TimerEvent: {}
+[4.460326] (-) TimerEvent: {}
+[4.562029] (-) TimerEvent: {}
+[4.663476] (-) TimerEvent: {}
+[4.764553] (-) TimerEvent: {}
+[4.866862] (-) TimerEvent: {}
+[4.968372] (-) TimerEvent: {}
+[5.070741] (-) TimerEvent: {}
+[5.171918] (-) TimerEvent: {}
+[5.272774] (-) TimerEvent: {}
+[5.374007] (-) TimerEvent: {}
+[5.475284] (-) TimerEvent: {}
+[5.576784] (-) TimerEvent: {}
+[5.677924] (-) TimerEvent: {}
+[5.779048] (-) TimerEvent: {}
+[5.881340] (-) TimerEvent: {}
+[5.989273] (-) TimerEvent: {}
+[6.092546] (-) TimerEvent: {}
+[6.193864] (-) TimerEvent: {}
+[6.294817] (-) TimerEvent: {}
+[6.396622] (-) TimerEvent: {}
+[6.499150] (-) TimerEvent: {}
+[6.600471] (-) TimerEvent: {}
+[6.701892] (-) TimerEvent: {}
+[6.802877] (-) TimerEvent: {}
+[6.905124] (-) TimerEvent: {}
+[7.007357] (-) TimerEvent: {}
+[7.109006] (-) TimerEvent: {}
+[7.211156] (-) TimerEvent: {}
+[7.312480] (-) TimerEvent: {}
+[7.413437] (-) TimerEvent: {}
+[7.516088] (-) TimerEvent: {}
+[7.617807] (-) TimerEvent: {}
+[7.719691] (-) TimerEvent: {}
+[7.820918] (-) TimerEvent: {}
+[7.922628] (-) TimerEvent: {}
+[8.024788] (-) TimerEvent: {}
+[8.127701] (-) TimerEvent: {}
+[8.229302] (-) TimerEvent: {}
+[8.263014] (pineapple_box_sorter) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../build/pineapple_box_sorter', 'build', '--build-base', '/IRS_Labs/build/pineapple_box_sorter/build', 'install', '--record', '/IRS_Labs/build/pineapple_box_sorter/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/IRS_Labs/pineapple_box_sorter', 'env': {'PYTHON_BASIC_REPL': '1', 'WORKSPACE_ROOT': '/omron_ws', 'HOSTNAME': 'Conners-Laptop', 'GIT_ASKPASS': '/root/.vscode-server/bin/6f17636121051a53c88d3e605c491d22af2ba755/extensions/git/dist/askpass.sh', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/root/.vscode-server/bin/6f17636121051a53c88d3e605c491d22af2ba755/bin/helpers/browser.sh', 'HOME': '/root', 'TERM_PROGRAM_VERSION': '1.103.2', 'VSCODE_IPC_HOOK_CLI': '/tmp/vscode-ipc-216c4621-1a89-4f3d-9904-3291a15836ab.sock', 'PYTHONUNBUFFERED': '1', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/root/.vscode-server/bin/6f17636121051a53c88d3e605c491d22af2ba755/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/root/.vscode-server/bin/6f17636121051a53c88d3e605c491d22af2ba755/node', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'BUNDLED_DEBUGPY_PATH': '/root/.vscode-server/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/libs/debugpy', 'COLORTERM': 'truecolor', 'REMOTE_CONTAINERS': 'true', 'COLCON_PREFIX_PATH': '/IRS_Labs/install', 'ROS_DISTRO': 'humble', 'REMOTE_CONTAINERS_IPC': '/tmp/vscode-remote-containers-ipc-340e1056-eae1-417f-bb83-2f2ac5ed0dc8.sock', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NVIDIA_DRIVER_CAPABILITIES': 'all', 'TERM': 'xterm-256color', 'ROS_LOCALHOST_ONLY': '0', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/humble/bin:/root/.vscode-server/bin/6f17636121051a53c88d3e605c491d22af2ba755/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.vscode-server/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts', 'REMOTE_CONTAINERS_SOCKETS': '["/tmp/vscode-ssh-auth-340e1056-eae1-417f-bb83-2f2ac5ed0dc8.sock","/root/.gnupg/S.gpg-agent"]', 'DISPLAY': ':0', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/root/.vscode-server/extensions/ms-python.debugpy-2025.10.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-c93a78fa7e98636b.txt', 'LANG': 'C.UTF-8', 'PYTHONSTARTUP': '/root/.vscode-server/data/User/workspaceStorage/b7c18170615eebed16128dff75811cbf/ms-python.python/pythonrc.py', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/tmp/vscode-git-6c1e65ca7d.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/tmp/vscode-ssh-auth-340e1056-eae1-417f-bb83-2f2ac5ed0dc8.sock', 'ROS_DOMAIN_ID': '0', 'AMENT_PREFIX_PATH': '/IRS_Labs/install/pineapple_box_sorter:/IRS_Labs/install/pa_warehouse_status:/IRS_Labs/install/hand_solo_virtual_nav:/IRS_Labs/install/hand_solo_arm:/opt/ros/humble', 'DEBIAN_FRONTEND': 'noninteractive', 'SHELL': '/bin/bash', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/IRS_Labs/build/pineapple_box_sorter', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/IRS_Labs/build/pineapple_box_sorter/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages:/IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages:/IRS_Labs/install/pa_warehouse_status/lib/python3.10/site-packages:/IRS_Labs/install/hand_solo_virtual_nav/lib/python3.10/site-packages:/IRS_Labs/install/hand_solo_arm/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'NVIDIA_VISIBLE_DEVICES': 'all', 'COLCON': '1'}, 'shell': False}
+[8.295118] (pa_warehouse_status) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../build/pa_warehouse_status', 'build', '--build-base', '/IRS_Labs/build/pa_warehouse_status/build', 'install', '--record', '/IRS_Labs/build/pa_warehouse_status/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/IRS_Labs/pa_warehouse_status', 'env': {'PYTHON_BASIC_REPL': '1', 'WORKSPACE_ROOT': '/omron_ws', 'HOSTNAME': 'Conners-Laptop', 'GIT_ASKPASS': '/root/.vscode-server/bin/6f17636121051a53c88d3e605c491d22af2ba755/extensions/git/dist/askpass.sh', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/root/.vscode-server/bin/6f17636121051a53c88d3e605c491d22af2ba755/bin/helpers/browser.sh', 'HOME': '/root', 'TERM_PROGRAM_VERSION': '1.103.2', 'VSCODE_IPC_HOOK_CLI': '/tmp/vscode-ipc-216c4621-1a89-4f3d-9904-3291a15836ab.sock', 'PYTHONUNBUFFERED': '1', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/root/.vscode-server/bin/6f17636121051a53c88d3e605c491d22af2ba755/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/root/.vscode-server/bin/6f17636121051a53c88d3e605c491d22af2ba755/node', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'BUNDLED_DEBUGPY_PATH': '/root/.vscode-server/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/libs/debugpy', 'COLORTERM': 'truecolor', 'REMOTE_CONTAINERS': 'true', 'COLCON_PREFIX_PATH': '/IRS_Labs/install', 'ROS_DISTRO': 'humble', 'REMOTE_CONTAINERS_IPC': '/tmp/vscode-remote-containers-ipc-340e1056-eae1-417f-bb83-2f2ac5ed0dc8.sock', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NVIDIA_DRIVER_CAPABILITIES': 'all', 'TERM': 'xterm-256color', 'ROS_LOCALHOST_ONLY': '0', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/humble/bin:/root/.vscode-server/bin/6f17636121051a53c88d3e605c491d22af2ba755/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.vscode-server/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts', 'REMOTE_CONTAINERS_SOCKETS': '["/tmp/vscode-ssh-auth-340e1056-eae1-417f-bb83-2f2ac5ed0dc8.sock","/root/.gnupg/S.gpg-agent"]', 'DISPLAY': ':0', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/root/.vscode-server/extensions/ms-python.debugpy-2025.10.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-c93a78fa7e98636b.txt', 'LANG': 'C.UTF-8', 'PYTHONSTARTUP': '/root/.vscode-server/data/User/workspaceStorage/b7c18170615eebed16128dff75811cbf/ms-python.python/pythonrc.py', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/tmp/vscode-git-6c1e65ca7d.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/tmp/vscode-ssh-auth-340e1056-eae1-417f-bb83-2f2ac5ed0dc8.sock', 'ROS_DOMAIN_ID': '0', 'AMENT_PREFIX_PATH': '/IRS_Labs/install/pineapple_box_sorter:/IRS_Labs/install/pa_warehouse_status:/IRS_Labs/install/hand_solo_virtual_nav:/IRS_Labs/install/hand_solo_arm:/opt/ros/humble', 'DEBIAN_FRONTEND': 'noninteractive', 'SHELL': '/bin/bash', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/IRS_Labs/build/pa_warehouse_status', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/IRS_Labs/build/pa_warehouse_status/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/IRS_Labs/install/pa_warehouse_status/lib/python3.10/site-packages:/IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages:/IRS_Labs/install/pa_warehouse_status/lib/python3.10/site-packages:/IRS_Labs/install/hand_solo_virtual_nav/lib/python3.10/site-packages:/IRS_Labs/install/hand_solo_arm/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'NVIDIA_VISIBLE_DEVICES': 'all', 'COLCON': '1'}, 'shell': False}
+[8.307507] (hand_solo_virtual_nav) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../build/hand_solo_virtual_nav', 'build', '--build-base', '/IRS_Labs/build/hand_solo_virtual_nav/build', 'install', '--record', '/IRS_Labs/build/hand_solo_virtual_nav/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/IRS_Labs/hand_solo_virtual_nav', 'env': {'PYTHON_BASIC_REPL': '1', 'WORKSPACE_ROOT': '/omron_ws', 'HOSTNAME': 'Conners-Laptop', 'GIT_ASKPASS': '/root/.vscode-server/bin/6f17636121051a53c88d3e605c491d22af2ba755/extensions/git/dist/askpass.sh', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/root/.vscode-server/bin/6f17636121051a53c88d3e605c491d22af2ba755/bin/helpers/browser.sh', 'HOME': '/root', 'TERM_PROGRAM_VERSION': '1.103.2', 'VSCODE_IPC_HOOK_CLI': '/tmp/vscode-ipc-216c4621-1a89-4f3d-9904-3291a15836ab.sock', 'PYTHONUNBUFFERED': '1', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/root/.vscode-server/bin/6f17636121051a53c88d3e605c491d22af2ba755/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/root/.vscode-server/bin/6f17636121051a53c88d3e605c491d22af2ba755/node', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'BUNDLED_DEBUGPY_PATH': '/root/.vscode-server/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/libs/debugpy', 'COLORTERM': 'truecolor', 'REMOTE_CONTAINERS': 'true', 'COLCON_PREFIX_PATH': '/IRS_Labs/install', 'ROS_DISTRO': 'humble', 'REMOTE_CONTAINERS_IPC': '/tmp/vscode-remote-containers-ipc-340e1056-eae1-417f-bb83-2f2ac5ed0dc8.sock', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NVIDIA_DRIVER_CAPABILITIES': 'all', 'TERM': 'xterm-256color', 'ROS_LOCALHOST_ONLY': '0', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/humble/bin:/root/.vscode-server/bin/6f17636121051a53c88d3e605c491d22af2ba755/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.vscode-server/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts', 'REMOTE_CONTAINERS_SOCKETS': '["/tmp/vscode-ssh-auth-340e1056-eae1-417f-bb83-2f2ac5ed0dc8.sock","/root/.gnupg/S.gpg-agent"]', 'DISPLAY': ':0', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/root/.vscode-server/extensions/ms-python.debugpy-2025.10.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-c93a78fa7e98636b.txt', 'LANG': 'C.UTF-8', 'PYTHONSTARTUP': '/root/.vscode-server/data/User/workspaceStorage/b7c18170615eebed16128dff75811cbf/ms-python.python/pythonrc.py', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/tmp/vscode-git-6c1e65ca7d.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/tmp/vscode-ssh-auth-340e1056-eae1-417f-bb83-2f2ac5ed0dc8.sock', 'ROS_DOMAIN_ID': '0', 'AMENT_PREFIX_PATH': '/IRS_Labs/install/pineapple_box_sorter:/IRS_Labs/install/pa_warehouse_status:/IRS_Labs/install/hand_solo_virtual_nav:/IRS_Labs/install/hand_solo_arm:/opt/ros/humble', 'DEBIAN_FRONTEND': 'noninteractive', 'SHELL': '/bin/bash', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/IRS_Labs/build/hand_solo_virtual_nav', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/IRS_Labs/build/hand_solo_virtual_nav/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/IRS_Labs/install/hand_solo_virtual_nav/lib/python3.10/site-packages:/IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages:/IRS_Labs/install/pa_warehouse_status/lib/python3.10/site-packages:/IRS_Labs/install/hand_solo_virtual_nav/lib/python3.10/site-packages:/IRS_Labs/install/hand_solo_arm/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'NVIDIA_VISIBLE_DEVICES': 'all', 'COLCON': '1'}, 'shell': False}
+[8.317254] (hand_solo_arm) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../build/hand_solo_arm', 'build', '--build-base', '/IRS_Labs/build/hand_solo_arm/build', 'install', '--record', '/IRS_Labs/build/hand_solo_arm/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/IRS_Labs/hand_solo_arm', 'env': {'PYTHON_BASIC_REPL': '1', 'WORKSPACE_ROOT': '/omron_ws', 'HOSTNAME': 'Conners-Laptop', 'GIT_ASKPASS': '/root/.vscode-server/bin/6f17636121051a53c88d3e605c491d22af2ba755/extensions/git/dist/askpass.sh', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/opt/ros/humble/opt/rviz_ogre_vendor/lib:/opt/ros/humble/lib/x86_64-linux-gnu:/opt/ros/humble/lib', 'BROWSER': '/root/.vscode-server/bin/6f17636121051a53c88d3e605c491d22af2ba755/bin/helpers/browser.sh', 'HOME': '/root', 'TERM_PROGRAM_VERSION': '1.103.2', 'VSCODE_IPC_HOOK_CLI': '/tmp/vscode-ipc-216c4621-1a89-4f3d-9904-3291a15836ab.sock', 'PYTHONUNBUFFERED': '1', 'ROS_PYTHON_VERSION': '3', 'VSCODE_GIT_ASKPASS_MAIN': '/root/.vscode-server/bin/6f17636121051a53c88d3e605c491d22af2ba755/extensions/git/dist/askpass-main.js', 'VSCODE_GIT_ASKPASS_NODE': '/root/.vscode-server/bin/6f17636121051a53c88d3e605c491d22af2ba755/node', 'PYDEVD_DISABLE_FILE_VALIDATION': '1', 'BUNDLED_DEBUGPY_PATH': '/root/.vscode-server/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/libs/debugpy', 'COLORTERM': 'truecolor', 'REMOTE_CONTAINERS': 'true', 'COLCON_PREFIX_PATH': '/IRS_Labs/install', 'ROS_DISTRO': 'humble', 'REMOTE_CONTAINERS_IPC': '/tmp/vscode-remote-containers-ipc-340e1056-eae1-417f-bb83-2f2ac5ed0dc8.sock', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'NVIDIA_DRIVER_CAPABILITIES': 'all', 'TERM': 'xterm-256color', 'ROS_LOCALHOST_ONLY': '0', 'QT_X11_NO_MITSHM': '1', 'PATH': '/opt/ros/humble/bin:/root/.vscode-server/bin/6f17636121051a53c88d3e605c491d22af2ba755/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/root/.vscode-server/extensions/ms-python.debugpy-2025.10.0-linux-x64/bundled/scripts/noConfigScripts', 'REMOTE_CONTAINERS_SOCKETS': '["/tmp/vscode-ssh-auth-340e1056-eae1-417f-bb83-2f2ac5ed0dc8.sock","/root/.gnupg/S.gpg-agent"]', 'DISPLAY': ':0', 'VSCODE_DEBUGPY_ADAPTER_ENDPOINTS': '/root/.vscode-server/extensions/ms-python.debugpy-2025.10.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-c93a78fa7e98636b.txt', 'LANG': 'C.UTF-8', 'PYTHONSTARTUP': '/root/.vscode-server/data/User/workspaceStorage/b7c18170615eebed16128dff75811cbf/ms-python.python/pythonrc.py', 'RMW_IMPLEMENTATION': 'rmw_cyclonedds_cpp', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'VSCODE_GIT_IPC_HANDLE': '/tmp/vscode-git-6c1e65ca7d.sock', 'TERM_PROGRAM': 'vscode', 'SSH_AUTH_SOCK': '/tmp/vscode-ssh-auth-340e1056-eae1-417f-bb83-2f2ac5ed0dc8.sock', 'ROS_DOMAIN_ID': '0', 'AMENT_PREFIX_PATH': '/IRS_Labs/install/pineapple_box_sorter:/IRS_Labs/install/pa_warehouse_status:/IRS_Labs/install/hand_solo_virtual_nav:/IRS_Labs/install/hand_solo_arm:/opt/ros/humble', 'DEBIAN_FRONTEND': 'noninteractive', 'SHELL': '/bin/bash', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'PWD': '/IRS_Labs/build/hand_solo_arm', 'LC_ALL': 'C.UTF-8', 'PYTHONPATH': '/IRS_Labs/build/hand_solo_arm/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/IRS_Labs/install/hand_solo_arm/lib/python3.10/site-packages:/IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages:/IRS_Labs/install/pa_warehouse_status/lib/python3.10/site-packages:/IRS_Labs/install/hand_solo_virtual_nav/lib/python3.10/site-packages:/IRS_Labs/install/hand_solo_arm/lib/python3.10/site-packages:/opt/ros/humble/lib/python3.10/site-packages:/opt/ros/humble/local/lib/python3.10/dist-packages', 'NVIDIA_VISIBLE_DEVICES': 'all', 'COLCON': '1'}, 'shell': False}
+[8.329594] (-) TimerEvent: {}
+[8.430795] (-) TimerEvent: {}
+[8.533673] (-) TimerEvent: {}
+[8.634930] (-) TimerEvent: {}
+[8.736470] (-) TimerEvent: {}
+[8.837244] (-) TimerEvent: {}
+[8.938902] (-) TimerEvent: {}
+[9.041104] (-) TimerEvent: {}
+[9.142736] (-) TimerEvent: {}
+[9.245204] (-) TimerEvent: {}
+[9.346067] (-) TimerEvent: {}
+[9.448047] (-) TimerEvent: {}
+[9.550567] (-) TimerEvent: {}
+[9.621884] (pineapple_box_sorter) StdoutLine: {'line': b'running egg_info\n'}
+[9.628587] (pineapple_box_sorter) StdoutLine: {'line': b'writing ../build/pineapple_box_sorter/pineapple_box_sorter.egg-info/PKG-INFO\n'}
+[9.630914] (pineapple_box_sorter) StdoutLine: {'line': b'writing dependency_links to ../build/pineapple_box_sorter/pineapple_box_sorter.egg-info/dependency_links.txt\n'}
+[9.632798] (pineapple_box_sorter) StdoutLine: {'line': b'writing entry points to ../build/pineapple_box_sorter/pineapple_box_sorter.egg-info/entry_points.txt\n'}
+[9.634204] (pineapple_box_sorter) StdoutLine: {'line': b'writing requirements to ../build/pineapple_box_sorter/pineapple_box_sorter.egg-info/requires.txt\n'}
+[9.636100] (pineapple_box_sorter) StdoutLine: {'line': b'writing top-level names to ../build/pineapple_box_sorter/pineapple_box_sorter.egg-info/top_level.txt\n'}
+[9.650820] (-) TimerEvent: {}
+[9.652104] (pineapple_box_sorter) StdoutLine: {'line': b"reading manifest file '../build/pineapple_box_sorter/pineapple_box_sorter.egg-info/SOURCES.txt'\n"}
+[9.655233] (pineapple_box_sorter) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[9.661837] (pineapple_box_sorter) StdoutLine: {'line': b"writing manifest file '../build/pineapple_box_sorter/pineapple_box_sorter.egg-info/SOURCES.txt'\n"}
+[9.663487] (pineapple_box_sorter) StdoutLine: {'line': b'running build\n'}
+[9.664436] (pineapple_box_sorter) StdoutLine: {'line': b'running build_py\n'}
+[9.665649] (pineapple_box_sorter) StdoutLine: {'line': b'copying pineapple_box_sorter/hs_waypoint_follower.py -> /IRS_Labs/build/pineapple_box_sorter/build/lib/pineapple_box_sorter\n'}
+[9.669709] (pineapple_box_sorter) StdoutLine: {'line': b'running install\n'}
+[9.672269] (pineapple_box_sorter) StdoutLine: {'line': b'running install_lib\n'}
+[9.679201] (pineapple_box_sorter) StdoutLine: {'line': b'copying /IRS_Labs/build/pineapple_box_sorter/build/lib/pineapple_box_sorter/hs_waypoint_follower.py -> /IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages/pineapple_box_sorter\n'}
+[9.683142] (pineapple_box_sorter) StdoutLine: {'line': b'byte-compiling /IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages/pineapple_box_sorter/hs_waypoint_follower.py to hs_waypoint_follower.cpython-310.pyc\n'}
+[9.693916] (pineapple_box_sorter) StdoutLine: {'line': b'running install_data\n'}
+[9.696276] (pineapple_box_sorter) StdoutLine: {'line': b'running install_egg_info\n'}
+[9.704068] (pineapple_box_sorter) StdoutLine: {'line': b"removing '/IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages/pineapple_box_sorter-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[9.705123] (pineapple_box_sorter) StdoutLine: {'line': b'Copying ../build/pineapple_box_sorter/pineapple_box_sorter.egg-info to /IRS_Labs/install/pineapple_box_sorter/lib/python3.10/site-packages/pineapple_box_sorter-0.0.0-py3.10.egg-info\n'}
+[9.709963] (pineapple_box_sorter) StdoutLine: {'line': b'running install_scripts\n'}
+[9.715542] (hand_solo_virtual_nav) StdoutLine: {'line': b'running egg_info\n'}
+[9.720099] (hand_solo_virtual_nav) StdoutLine: {'line': b'writing ../build/hand_solo_virtual_nav/hand_solo_virtual_nav.egg-info/PKG-INFO\n'}
+[9.720989] (hand_solo_virtual_nav) StdoutLine: {'line': b'writing dependency_links to ../build/hand_solo_virtual_nav/hand_solo_virtual_nav.egg-info/dependency_links.txt\n'}
+[9.722006] (hand_solo_virtual_nav) StdoutLine: {'line': b'writing entry points to ../build/hand_solo_virtual_nav/hand_solo_virtual_nav.egg-info/entry_points.txt\n'}
+[9.723000] (hand_solo_virtual_nav) StdoutLine: {'line': b'writing requirements to ../build/hand_solo_virtual_nav/hand_solo_virtual_nav.egg-info/requires.txt\n'}
+[9.723463] (hand_solo_virtual_nav) StdoutLine: {'line': b'writing top-level names to ../build/hand_solo_virtual_nav/hand_solo_virtual_nav.egg-info/top_level.txt\n'}
+[9.731210] (hand_solo_virtual_nav) StdoutLine: {'line': b"reading manifest file '../build/hand_solo_virtual_nav/hand_solo_virtual_nav.egg-info/SOURCES.txt'\n"}
+[9.732601] (hand_solo_virtual_nav) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[9.736464] (hand_solo_virtual_nav) StdoutLine: {'line': b"writing manifest file '../build/hand_solo_virtual_nav/hand_solo_virtual_nav.egg-info/SOURCES.txt'\n"}
+[9.737325] (hand_solo_virtual_nav) StdoutLine: {'line': b'running build\n'}
+[9.737927] (hand_solo_virtual_nav) StdoutLine: {'line': b'running build_py\n'}
+[9.739656] (hand_solo_virtual_nav) StdoutLine: {'line': b'running install\n'}
+[9.741240] (hand_solo_virtual_nav) StdoutLine: {'line': b'running install_lib\n'}
+[9.747024] (hand_solo_virtual_nav) StdoutLine: {'line': b'running install_data\n'}
+[9.749079] (hand_solo_virtual_nav) StdoutLine: {'line': b'running install_egg_info\n'}
+[9.750928] (-) TimerEvent: {}
+[9.759682] (hand_solo_virtual_nav) StdoutLine: {'line': b"removing '/IRS_Labs/install/hand_solo_virtual_nav/lib/python3.10/site-packages/hand_solo_virtual_nav-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[9.761379] (hand_solo_virtual_nav) StdoutLine: {'line': b'Copying ../build/hand_solo_virtual_nav/hand_solo_virtual_nav.egg-info to /IRS_Labs/install/hand_solo_virtual_nav/lib/python3.10/site-packages/hand_solo_virtual_nav-0.0.0-py3.10.egg-info\n'}
+[9.767562] (hand_solo_virtual_nav) StdoutLine: {'line': b'running install_scripts\n'}
+[9.814404] (pineapple_box_sorter) StdoutLine: {'line': b'Installing box_sorter script to /IRS_Labs/install/pineapple_box_sorter/lib/pineapple_box_sorter\n'}
+[9.815084] (pineapple_box_sorter) StdoutLine: {'line': b'Installing global_localizer script to /IRS_Labs/install/pineapple_box_sorter/lib/pineapple_box_sorter\n'}
+[9.815608] (pineapple_box_sorter) StdoutLine: {'line': b'Installing hs_waypoint_follower script to /IRS_Labs/install/pineapple_box_sorter/lib/pineapple_box_sorter\n'}
+[9.816640] (pineapple_box_sorter) StdoutLine: {'line': b"writing list of installed files to '/IRS_Labs/build/pineapple_box_sorter/install.log'\n"}
+[9.822351] (pa_warehouse_status) StdoutLine: {'line': b'running egg_info\n'}
+[9.825938] (pa_warehouse_status) StdoutLine: {'line': b'writing ../build/pa_warehouse_status/pa_warehouse_status.egg-info/PKG-INFO\n'}
+[9.826739] (pa_warehouse_status) StdoutLine: {'line': b'writing dependency_links to ../build/pa_warehouse_status/pa_warehouse_status.egg-info/dependency_links.txt\n'}
+[9.827441] (pa_warehouse_status) StdoutLine: {'line': b'writing entry points to ../build/pa_warehouse_status/pa_warehouse_status.egg-info/entry_points.txt\n'}
+[9.828040] (pa_warehouse_status) StdoutLine: {'line': b'writing requirements to ../build/pa_warehouse_status/pa_warehouse_status.egg-info/requires.txt\n'}
+[9.828436] (pa_warehouse_status) StdoutLine: {'line': b'writing top-level names to ../build/pa_warehouse_status/pa_warehouse_status.egg-info/top_level.txt\n'}
+[9.837344] (pa_warehouse_status) StdoutLine: {'line': b"reading manifest file '../build/pa_warehouse_status/pa_warehouse_status.egg-info/SOURCES.txt'\n"}
+[9.839436] (pa_warehouse_status) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[9.844829] (pa_warehouse_status) StdoutLine: {'line': b"writing manifest file '../build/pa_warehouse_status/pa_warehouse_status.egg-info/SOURCES.txt'\n"}
+[9.846418] (pa_warehouse_status) StdoutLine: {'line': b'running build\n'}
+[9.847335] (pa_warehouse_status) StdoutLine: {'line': b'running build_py\n'}
+[9.849141] (pa_warehouse_status) StdoutLine: {'line': b'running install\n'}
+[9.851267] (-) TimerEvent: {}
+[9.853083] (pa_warehouse_status) StdoutLine: {'line': b'running install_lib\n'}
+[9.855573] (hand_solo_arm) StdoutLine: {'line': b'running egg_info\n'}
+[9.859717] (hand_solo_arm) StdoutLine: {'line': b'writing ../build/hand_solo_arm/hand_solo_arm.egg-info/PKG-INFO\n'}
+[9.860840] (hand_solo_arm) StdoutLine: {'line': b'writing dependency_links to ../build/hand_solo_arm/hand_solo_arm.egg-info/dependency_links.txt\n'}
+[9.862197] (hand_solo_arm) StdoutLine: {'line': b'writing entry points to ../build/hand_solo_arm/hand_solo_arm.egg-info/entry_points.txt\n'}
+[9.862982] (pa_warehouse_status) StdoutLine: {'line': b'running install_data\n'}
+[9.864351] (hand_solo_arm) StdoutLine: {'line': b'writing requirements to ../build/hand_solo_arm/hand_solo_arm.egg-info/requires.txt\n'}
+[9.865114] (hand_solo_arm) StdoutLine: {'line': b'writing top-level names to ../build/hand_solo_arm/hand_solo_arm.egg-info/top_level.txt\n'}
+[9.865815] (pa_warehouse_status) StdoutLine: {'line': b'running install_egg_info\n'}
+[9.872133] (hand_solo_arm) StdoutLine: {'line': b"reading manifest file '../build/hand_solo_arm/hand_solo_arm.egg-info/SOURCES.txt'\n"}
+[9.873082] (pa_warehouse_status) StdoutLine: {'line': b"removing '/IRS_Labs/install/pa_warehouse_status/lib/python3.10/site-packages/pa_warehouse_status-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[9.873988] (hand_solo_arm) StdoutLine: {'line': b"adding license file 'LICENSE'\n"}
+[9.874846] (pa_warehouse_status) StdoutLine: {'line': b'Copying ../build/pa_warehouse_status/pa_warehouse_status.egg-info to /IRS_Labs/install/pa_warehouse_status/lib/python3.10/site-packages/pa_warehouse_status-0.0.0-py3.10.egg-info\n'}
+[9.876856] (hand_solo_arm) StdoutLine: {'line': b"writing manifest file '../build/hand_solo_arm/hand_solo_arm.egg-info/SOURCES.txt'\n"}
+[9.878114] (hand_solo_arm) StdoutLine: {'line': b'running build\n'}
+[9.879251] (pa_warehouse_status) StdoutLine: {'line': b'running install_scripts\n'}
+[9.879830] (hand_solo_arm) StdoutLine: {'line': b'running build_py\n'}
+[9.880692] (hand_solo_arm) StdoutLine: {'line': b'running install\n'}
+[9.881661] (hand_solo_arm) StdoutLine: {'line': b'running install_lib\n'}
+[9.891685] (hand_solo_arm) StdoutLine: {'line': b'running install_data\n'}
+[9.893155] (hand_solo_arm) StdoutLine: {'line': b'running install_egg_info\n'}
+[9.894714] (hand_solo_virtual_nav) StdoutLine: {'line': b'Installing hs_waypoint_follower script to /IRS_Labs/install/hand_solo_virtual_nav/lib/hand_solo_virtual_nav\n'}
+[9.897729] (hand_solo_virtual_nav) StdoutLine: {'line': b"writing list of installed files to '/IRS_Labs/build/hand_solo_virtual_nav/install.log'\n"}
+[9.909931] (hand_solo_arm) StdoutLine: {'line': b"removing '/IRS_Labs/install/hand_solo_arm/lib/python3.10/site-packages/hand_solo_arm-0.0.0-py3.10.egg-info' (and everything under it)\n"}
+[9.913988] (hand_solo_arm) StdoutLine: {'line': b'Copying ../build/hand_solo_arm/hand_solo_arm.egg-info to /IRS_Labs/install/hand_solo_arm/lib/python3.10/site-packages/hand_solo_arm-0.0.0-py3.10.egg-info\n'}
+[9.926679] (hand_solo_arm) StdoutLine: {'line': b'running install_scripts\n'}
+[9.951947] (-) TimerEvent: {}
+[9.970567] (pineapple_box_sorter) CommandEnded: {'returncode': 0}
+[10.054756] (-) TimerEvent: {}
+[10.080308] (pa_warehouse_status) StdoutLine: {'line': b'Installing pineapple_gossip_bot script to /IRS_Labs/install/pa_warehouse_status/lib/pa_warehouse_status\n'}
+[10.100867] (pa_warehouse_status) StdoutLine: {'line': b'Installing plc_hmi_listener script to /IRS_Labs/install/pa_warehouse_status/lib/pa_warehouse_status\n'}
+[10.108800] (pa_warehouse_status) StdoutLine: {'line': b"writing list of installed files to '/IRS_Labs/build/pa_warehouse_status/install.log'\n"}
+[10.124926] (pineapple_box_sorter) JobEnded: {'identifier': 'pineapple_box_sorter', 'rc': 0}
+[10.142246] (hand_solo_arm) StdoutLine: {'line': b'Installing hs_pick_place script to /IRS_Labs/install/hand_solo_arm/lib/hand_solo_arm\n'}
+[10.144581] (hand_solo_virtual_nav) CommandEnded: {'returncode': 0}
+[10.148006] (hand_solo_arm) StdoutLine: {'line': b"writing list of installed files to '/IRS_Labs/build/hand_solo_arm/install.log'\n"}
+[10.159740] (-) TimerEvent: {}
+[10.213406] (hand_solo_virtual_nav) JobEnded: {'identifier': 'hand_solo_virtual_nav', 'rc': 0}
+[10.258854] (pa_warehouse_status) CommandEnded: {'returncode': 0}
+[10.260777] (-) TimerEvent: {}
+[10.309947] (pa_warehouse_status) JobEnded: {'identifier': 'pa_warehouse_status', 'rc': 0}
+[10.317400] (hand_solo_arm) CommandEnded: {'returncode': 0}
+[10.339144] (hand_solo_arm) JobEnded: {'identifier': 'hand_solo_arm', 'rc': 0}
+[10.345113] (-) EventReactorShutdown: {}
