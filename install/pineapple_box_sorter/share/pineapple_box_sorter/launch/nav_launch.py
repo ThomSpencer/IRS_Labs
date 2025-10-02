@@ -187,15 +187,7 @@ def generate_launch_description():
         arguments=['-d', rviz_cfg],
         parameters=[{'use_sim_time': use_sim_time}],
         output='screen'
-    )
-    
-    localizer = Node(
-        package='pineapple_box_sorter',
-        executable='global_localizer',
-        name='GlobalLocalizer',
-        
-    )
-    
+    )    
 
     return LaunchDescription([
         # Launch arguments
@@ -222,5 +214,4 @@ def generate_launch_description():
         rviz,
         
         #misc
-        #localizer
     ])
