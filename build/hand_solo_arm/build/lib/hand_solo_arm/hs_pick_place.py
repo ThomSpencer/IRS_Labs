@@ -90,7 +90,7 @@ class HSWaypointRunner(Node):
         time.sleep(0.5)
 
         # Waypoint 6
-        if not self._send_and_wait([0.0, 0.0, 1.57, 0.0, 1.57, 0.0]): return
+        if not self._send_and_wait([0.0, 0.0, 0.0, 0.0, 0.0, 0.0]): return
         time.sleep(1.0)
 
         self.get_logger().info('Sequence complete ✅')

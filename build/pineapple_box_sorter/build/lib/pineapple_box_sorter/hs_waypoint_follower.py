@@ -14,15 +14,16 @@ from sensor_msgs.msg import JointState
 
 
 # --- Hard-coded positions ---
-conveyorA_pos = [1.5, -1.0, 0.0]
-conveyorB_pos = [1.5, 0.0, 0.0]
-conveyorC_pos = [1.5, 1.0, 0.0]
+conveyorA_pos = [1.5, -1.5, math.pi/2]
+conveyorB_pos = [1.5, -1.0, math.pi/2]
+conveyorC_pos = [1.5, 0.0, math.pi/2]
 conveyor_approach_pos = [-1.0, 0.0, 0.0]
 
 store_pos = [31.0, -4.5, -math.pi/2]
 store_approach_pos = [31.0, -1.5, -math.pi/2]
 
 movement_arm = [0.0, 0.0, 0.0, 0.0, -1.5708, 0.0]
+home_arm = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 readyForPickup_arm = [0.0, 0.0, 0.872665, 0.436332, 1.74533, 0.0]
 pickupA_arm = [0.0, 0.523599, 1.309, -0.349066, 1.5708, 0.296706]
 pickupB_arm = [0.0, 0.523599, 1.309, -0.349066, 1.5708, 0.296706]
@@ -197,6 +198,7 @@ class WaypointFollower(Node):
         if not self.send_and_wait_arm(movement_arm): raise Exception("ARM Planner error 6")
         self.send_and_wait_movement(conv_appr)
         time.sleep(wait_seconds)
+        if not self.send_and_wait_arm(home_arm): raise Exception("ARM Planner error 7")
 
         self.get_logger().info('Navigation sequence complete.')
 
