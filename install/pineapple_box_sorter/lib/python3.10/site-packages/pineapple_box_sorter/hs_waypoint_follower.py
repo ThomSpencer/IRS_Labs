@@ -21,6 +21,7 @@ conveyorC_pos = [2.5, 2.0, math.pi/2]
 conveyor_approach_pos = [-1.0, 0.0, 0.0]
 
 store_pos = [31.0, -5.25, -math.pi/2]
+post_store_pos = [31.0, -5.25, math.pi]
 store_approach_pos = [31.0, -1.5, -math.pi/2]
 
 # --- Hard-coded arm angles (radians) ---
@@ -70,23 +71,31 @@ class WaypointFollower(Node):
     def listener_callback(self, msg):
         jsonData = json.loads(msg.data)
         boxWeight = jsonData['box']['weight_raw']
-        if boxWeight == '\n' or boxWeight == '':
+        boxLocation = jsonData['box']['location'][-1]  # Last character only
+        
+        if boxWeight == '\n' or boxWeight == '' or boxLocation == '-':
             self.box_location = None 
             return  # Ignore empty messages
-        #self._logger.info(boxWeight)
+        
+        
         boxWeight = boxWeight.split()[1].strip()
-        #self._logger.info(f"{boxWeight}")
-        if int(boxWeight) > 10:
+        prev_status = self.box_location
+        #self.get_logger().info(f"Box weight: {boxWeight}, Box location: {boxLocation}")
+        
+        if int(boxWeight) > 10 and boxLocation == 'A':
             # Big Box
             self.box_location = "big"
-        elif int(boxWeight) < 6:
+        elif int(boxWeight) < 6 and boxLocation == 'C':
             # Small Box
             self.box_location = "sml"
-        elif 6 <= int(boxWeight) <= 10:
+        elif 6 <= int(boxWeight) <= 10 and boxLocation == 'B':
             # Medium Box
             self.box_location = 'med'
         else:
             self.box_location = None  # Unknown weight, reset box location
+            
+        if prev_status != self.box_location:
+            self.get_logger().info(f'Box status updated: {self.box_location}')
 
     # --- Send MoveIt arm goal ---
     def send_and_wait_arm(self, joints: List[float]) -> bool:
@@ -181,6 +190,7 @@ class WaypointFollower(Node):
         c_pos = make_pose(*conveyorC_pos)
         conv_appr = make_pose(*conveyor_approach_pos)
         drop_pos = make_pose(*store_pos)
+        pos_drop_pos = make_pose(*post_store_pos)
         drop_appr = make_pose(*store_approach_pos)
 
         self.get_logger().info('Starting navigation sequence...')
@@ -190,14 +200,12 @@ class WaypointFollower(Node):
 
         box = None
         while self.box_location is None:
-            box = self.box_location
             self._logger.info('waiting for box location...')
             rclpy.spin_once(self, timeout_sec=2.0)
         box = self.box_location
 
         self.get_logger().info(f'Box detected: {box}')
-        
-        input("Waiting...")
+    
         
         try:
         #if box == 'big':
@@ -230,7 +238,9 @@ class WaypointFollower(Node):
         if not self.send_and_wait_arm(store_arm): raise Exception("ARM Planner error 5")
         rclpy.spin_once(self, timeout_sec=wait_seconds) 
         
-        #input("Waiting....")
+        self.send_and_wait_movement(pos_drop_pos)
+        #self.send_and_wait_movement(drop_appr) Robot doesnt reverse well
+
 
         if not self.send_and_wait_arm(movement_arm): raise Exception("ARM Planner error 6")
         self.send_and_wait_movement(conv_appr)
@@ -248,7 +258,7 @@ def main():
     try:
         while inp == None or inp == '\n' or inp == '':
             node.run_sequence()
-            inp = input("Press enter to go again")
+            inp = input("Press enter to go again: ")
     except Exception as e:
         node.get_logger().error(f'Sequence aborted: {e}')
     finally:

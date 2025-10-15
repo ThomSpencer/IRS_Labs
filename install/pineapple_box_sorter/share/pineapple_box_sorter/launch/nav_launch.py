@@ -11,7 +11,7 @@ def generate_launch_description():
     
     # File paths
     rviz_cfg = PathJoinSubstitution([pkg_share, 'rviz', 'pa_rviz_nav2.rviz'])
-    map_yaml = PathJoinSubstitution([pkg_share, 'map', 'pa_warehouse_map_01.yaml'])
+    map_yaml = PathJoinSubstitution([pkg_share, 'map', 'pa_warehouse_map_02.yaml'])
     nav2_params = PathJoinSubstitution([pkg_share, 'config', 'pa_nav2_params.yaml'])
     
     # Launch arguments (optional - for flexibility)
