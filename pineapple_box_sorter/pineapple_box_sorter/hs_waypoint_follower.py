@@ -34,6 +34,7 @@ pickupC_arm = [-math.pi/2, 0.710865, 1.209, -0.401426, 1.5708, 0.0]
 
 readyForStore_arm = [0.0, 0.0, 1.39626, 0.0, 1.72788, 0.0]
 store_arm = [0.0, 0.349066, 1.309, 0.0, 1.5708, 0.0]
+post_store_arm = [0.0, -math.pi/6, 5*math.pi/9, 0.0, math.pi/2, 0.0]
 
 JOINT_NAMES: List[str] = ['joint_1','joint_2','joint_3','joint_4','joint_5','joint_6']
 PLANNING_GROUP: str = 'tmr_arm'
@@ -238,6 +239,8 @@ class WaypointFollower(Node):
         if not self.send_and_wait_arm(store_arm): raise Exception("ARM Planner error 5")
         rclpy.spin_once(self, timeout_sec=wait_seconds) 
         
+        if not self.send_and_wait_arm(post_store_arm): raise Exception("ARM Planner error 5.1")
+        rclpy.spin_once(self, timeout_sec=wait_seconds) 
         self.send_and_wait_movement(pos_drop_pos)
         #self.send_and_wait_movement(drop_appr) Robot doesnt reverse well
 

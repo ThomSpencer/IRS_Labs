@@ -1,6 +1,0 @@
-[0.000000] (-) TimerEvent: {}
-[0.001114] (-) JobUnselected: {'identifier': 'hand_solo_arm'}
-[0.001549] (-) JobUnselected: {'identifier': 'hand_solo_virtual_nav'}
-[0.001640] (-) JobUnselected: {'identifier': 'pa_warehouse_status'}
-[0.002096] (-) JobUnselected: {'identifier': 'pineapple_box_sorter'}
-[0.002380] (-) EventReactorShutdown: {}
