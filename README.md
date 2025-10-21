@@ -56,3 +56,10 @@ ros2 run rqt_tf_tree rqt_tf_tree
 ```bash
 ros2 run rqt_image_view rqt_image_view
 ```
+
+# Box Sorter
+Run in separate terminals
+```bash
+ros2 launch pineapple_box_sorter nav_launch.py 
+ros2 run pineapple_box_sorter hs_waypoint_follower 
+```

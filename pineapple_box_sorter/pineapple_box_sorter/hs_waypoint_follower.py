@@ -1,6 +1,5 @@
 #!/usr/bin/env python3
 import math
-import time
 from typing import List
 import json
 
@@ -10,15 +9,15 @@ from rclpy.action import ActionClient
 from geometry_msgs.msg import PoseStamped
 from nav2_msgs.action import NavigateToPose
 from moveit_msgs.action import MoveGroup
-from moveit_msgs.msg import MotionPlanRequest, Constraints, JointConstraint, RobotState
+from moveit_msgs.msg import MotionPlanRequest, Constraints, JointConstraint
 from std_msgs.msg import String
 
 
 # --- Hard-coded positions ---
-conveyorA_pos = [2.5, -1.5, math.pi/2]
-conveyorB_pos = [2.5, -1.0, math.pi/2]
-conveyorC_pos = [2.5, 2.0, math.pi/2]
-conveyor_approach_pos = [-1.0, 0.0, 0.0]
+conveyor_approach_pos = [5.58, -3.21, math.pi/2]
+conveyor_big = [5.50, -1.32, math.pi/2]
+conveyor_medium = [5.58, -1.14, math.pi/2]
+conveyor_small = [5.63, 1.41, math.pi/2]
 
 store_pos = [31.0, -5.25, -math.pi/2]
 post_store_pos = [31.0, -5.25, math.pi]
@@ -28,9 +27,9 @@ store_approach_pos = [31.0, -1.5, -math.pi/2]
 movement_arm = [0.0, 0.0, 0.0, 0.0, -1.5708, 0.0]
 home_arm = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 readyForPickup_arm = [0.0, 0.0, 0.872665, 0.436332, 1.74533, 0.0]
-pickupA_arm = [-math.pi/2, 0.623599, 1.209, -0.349066, 1.5708, 0.296706]
-pickupB_arm = [-math.pi/2, 0.623599, 1.209, -0.349066, 1.5708, 0.296706]
-pickupC_arm = [-math.pi/2, 0.710865, 1.209, -0.401426, 1.5708, 0.0]
+pickupA_arm = [math.pi/2, 0.623599, 1.209, -0.349066, 1.5708, 0.296706]
+pickupB_arm = [math.pi/2, 0.623599, 1.209, -0.349066, 1.5708, 0.296706]
+pickupC_arm = [math.pi/2, 0.710865, 1.209, -0.401426, 1.5708, 0.0]
 
 readyForStore_arm = [0.0, 0.0, 1.39626, 0.0, 1.72788, 0.0]
 store_arm = [0.0, 0.349066, 1.309, 0.0, 1.5708, 0.0]
@@ -186,10 +185,11 @@ class WaypointFollower(Node):
         wait_seconds = 2
 
         # --- Precalculate poses ---
-        a_pos = make_pose(*conveyorA_pos)
-        b_pos = make_pose(*conveyorB_pos)
-        c_pos = make_pose(*conveyorC_pos)
+        big_box_pos = make_pose(*conveyor_big)
+        medium_box_pos = make_pose(*conveyor_medium)
+        small_box_pos = make_pose(*conveyor_small)
         conv_appr = make_pose(*conveyor_approach_pos)
+        
         drop_pos = make_pose(*store_pos)
         pos_drop_pos = make_pose(*post_store_pos)
         drop_appr = make_pose(*store_approach_pos)
@@ -208,25 +208,21 @@ class WaypointFollower(Node):
         self.get_logger().info(f'Box detected: {box}')
     
         
-        try:
-        #if box == 'big':
+        if box == 'big':
             self.get_logger().info('Big box detected, moving to conveyor A.')
             if not self.send_and_wait_arm(pickupA_arm): raise Exception("ARM Planner error 2")
-            self.send_and_wait_movement(a_pos)
+            self.send_and_wait_movement(big_box_pos)
             
-        #elif box == 'med':
+        elif box == 'med':
             self.get_logger().info('Medium box detected, moving to conveyor B.')
             if not self.send_and_wait_arm(pickupB_arm): raise Exception("ARM Planner error 2")
-            self.send_and_wait_movement(b_pos)
+            self.send_and_wait_movement(medium_box_pos)
             
-        #elif box == 'sml':
+        elif box == 'sml':
             self.get_logger().info('Small box detected, moving to conveyor C.')
             if not self.send_and_wait_arm(pickupC_arm): raise Exception("ARM Planner error 2")
-            self.send_and_wait_movement(c_pos)
-        except Exception as e:
-            pass        
-        
-        #input("Waiting...")
+            self.send_and_wait_movement(small_box_pos)
+
         rclpy.spin_once(self, timeout_sec=wait_seconds) 
         
         if not self.send_and_wait_arm(movement_arm): raise Exception("ARM Planner error 3")
@@ -236,13 +232,10 @@ class WaypointFollower(Node):
         rclpy.spin_once(self, timeout_sec=wait_seconds) 
 
         self.send_and_wait_movement(drop_pos)
-        if not self.send_and_wait_arm(store_arm): raise Exception("ARM Planner error 5")
-        rclpy.spin_once(self, timeout_sec=wait_seconds) 
         
         if not self.send_and_wait_arm(post_store_arm): raise Exception("ARM Planner error 5.1")
         rclpy.spin_once(self, timeout_sec=wait_seconds) 
         self.send_and_wait_movement(pos_drop_pos)
-        #self.send_and_wait_movement(drop_appr) Robot doesnt reverse well
 
 
         if not self.send_and_wait_arm(movement_arm): raise Exception("ARM Planner error 6")
@@ -261,7 +254,7 @@ def main():
     try:
         while inp == None or inp == '\n' or inp == '':
             node.run_sequence()
-            inp = input("Press enter to go again: ")
+            inp = None #input("Press enter to go again: ")
     except Exception as e:
         node.get_logger().error(f'Sequence aborted: {e}')
     finally:
