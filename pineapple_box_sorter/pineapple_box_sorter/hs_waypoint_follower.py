@@ -15,24 +15,23 @@ from std_msgs.msg import String
 
 # --- Hard-coded positions ---
 conveyor_approach_pos = [5.58, -3.21, math.pi/2]
-conveyor_big = [5.50, -1.32, math.pi/2]
-conveyor_medium = [5.58, -1.14, math.pi/2]
-conveyor_small = [5.63, 1.41, math.pi/2]
+conveyor_big_pos = [5.50, -1.32, math.pi/2]
+conveyor_medium_pos = [5.58, -1.14, math.pi/2]
+conveyor_small_pos = [5.63, 1.41, math.pi/2]
 
+store_approach_pos = [31.0, -1.5, -math.pi/2]
 store_pos = [31.0, -5.25, -math.pi/2]
 post_store_pos = [31.0, -5.25, math.pi]
-store_approach_pos = [31.0, -1.5, -math.pi/2]
 
 # --- Hard-coded arm angles (radians) ---
-movement_arm = [0.0, 0.0, 0.0, 0.0, -1.5708, 0.0]
 home_arm = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
-readyForPickup_arm = [0.0, 0.0, 0.872665, 0.436332, 1.74533, 0.0]
+movement_arm = [0.0, 0.0, 0.0, 0.0, -1.5708, 0.0]
+
 pickupA_arm = [math.pi/2, 0.623599, 1.209, -0.349066, 1.5708, 0.296706]
 pickupB_arm = [math.pi/2, 0.623599, 1.209, -0.349066, 1.5708, 0.296706]
 pickupC_arm = [math.pi/2, 0.710865, 1.209, -0.401426, 1.5708, 0.0]
 
-readyForStore_arm = [0.0, 0.0, 1.39626, 0.0, 1.72788, 0.0]
-store_arm = [0.0, 0.349066, 1.309, 0.0, 1.5708, 0.0]
+store_arm = [0.0, 0.0, 1.39626, 0.0, 1.72788, 0.0]
 post_store_arm = [0.0, -math.pi/6, 5*math.pi/9, 0.0, math.pi/2, 0.0]
 
 JOINT_NAMES: List[str] = ['joint_1','joint_2','joint_3','joint_4','joint_5','joint_6']
@@ -41,7 +40,6 @@ MOVE_ACTION_NAME: str = '/move_action'
 
 
 class WaypointFollower(Node):
-    
     def __init__(self):
         super().__init__('hs_waypoint_follower_nav2pose')
         # --- MoveGroup ActionClient ---
@@ -68,7 +66,6 @@ class WaypointFollower(Node):
             self.box_location = None 
             return  # Ignore empty messages
         
-        
         boxWeight = boxWeight.split()[1].strip()
         prev_status = self.box_location
         #self.get_logger().info(f"Box weight: {boxWeight}, Box location: {boxLocation}")
@@ -88,16 +85,6 @@ class WaypointFollower(Node):
         if prev_status != self.box_location:
             self.get_logger().info(f'Box status updated: {self.box_location}')
 
-    
-    def make_pose(self, x: float, y: float, yaw: float) -> PoseStamped:
-        ps = PoseStamped()
-        ps.header.frame_id = 'map'
-        ps.pose.position.x = x
-        ps.pose.position.y = y
-        half = yaw * 0.5
-        ps.pose.orientation.z = math.sin(half)
-        ps.pose.orientation.w = math.cos(half)
-        return ps
 
     # --- Send MoveIt arm goal ---
     def send_and_wait_arm(self, joints: List[float]) -> bool:
@@ -147,6 +134,18 @@ class WaypointFollower(Node):
         goal.planning_options.plan_only = False
         return goal
 
+
+    def make_pose(self, x: float, y: float, yaw: float) -> PoseStamped:
+            ps = PoseStamped()
+            ps.header.frame_id = 'map'
+            ps.pose.position.x = x
+            ps.pose.position.y = y
+            half = yaw * 0.5
+            ps.pose.orientation.z = math.sin(half)
+            ps.pose.orientation.w = math.cos(half)
+            return ps
+        
+
     # --- Send navigation goal ---
     def send_and_wait_movement(self, pose: PoseStamped) -> bool:
         self.get_logger().info('Waiting for Nav2 action server...')
@@ -188,13 +187,13 @@ class WaypointFollower(Node):
         wait_seconds = 2
 
         # --- Precalculate poses ---
-        big_box_pos = self.make_pose(*conveyor_big)
-        medium_box_pos = self.make_pose(*conveyor_medium)
-        small_box_pos = self.make_pose(*conveyor_small)
+        big_box_pos = self.make_pose(*conveyor_big_pos)
+        medium_box_pos = self.make_pose(*conveyor_medium_pos)
+        small_box_pos = self.make_pose(*conveyor_small_pos)
         conv_appr = self.make_pose(*conveyor_approach_pos)
         
         drop_pos = self.make_pose(*store_pos)
-        pos_drop_pos = self.make_pose(*post_store_pos)
+        post_drop_pos = self.make_pose(*post_store_pos)
         drop_appr = self.make_pose(*store_approach_pos)
 
         self.get_logger().info('Starting navigation sequence...')
@@ -202,7 +201,6 @@ class WaypointFollower(Node):
         self.send_and_wait_movement(conv_appr)
         rclpy.spin_once(self, timeout_sec=wait_seconds) 
 
-        box = None
         while self.box_location is None:
             self._logger.info('waiting for box location...')
             rclpy.spin_once(self, timeout_sec=2.0)
@@ -230,17 +228,17 @@ class WaypointFollower(Node):
         if not self.send_and_wait_arm(movement_arm): raise Exception("ARM Planner error 3")
         self.send_and_wait_movement(drop_appr)
         
-        if not self.send_and_wait_arm(readyForStore_arm): raise Exception("ARM Planner error 4")
+        if not self.send_and_wait_arm(store_arm): raise Exception("ARM Planner error 4")
 
         self.send_and_wait_movement(drop_pos)
         
         if not self.send_and_wait_arm(post_store_arm): raise Exception("ARM Planner error 5.1")
-        self.send_and_wait_movement(pos_drop_pos)
+        self.send_and_wait_movement(post_drop_pos)
 
 
         if not self.send_and_wait_arm(movement_arm): raise Exception("ARM Planner error 6")
         self.send_and_wait_movement(conv_appr)
-        if not self.send_and_wait_arm(home_arm): raise Exception("ARM Planner error 7")
+        #if not self.send_and_wait_arm(home_arm): raise Exception("ARM Planner error 7")
 
         self.get_logger().info('Navigation sequence complete.')
         
