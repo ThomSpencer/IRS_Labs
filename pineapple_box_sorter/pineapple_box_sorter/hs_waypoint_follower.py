@@ -40,18 +40,6 @@ PLANNING_GROUP: str = 'tmr_arm'
 MOVE_ACTION_NAME: str = '/move_action'
 
 
-# --- Helper function ---
-def make_pose(x: float, y: float, yaw: float) -> PoseStamped:
-    ps = PoseStamped()
-    ps.header.frame_id = 'map'
-    ps.pose.position.x = x
-    ps.pose.position.y = y
-    half = yaw * 0.5
-    ps.pose.orientation.z = math.sin(half)
-    ps.pose.orientation.w = math.cos(half)
-    return ps
-
-
 class WaypointFollower(Node):
     
     def __init__(self):
@@ -64,6 +52,9 @@ class WaypointFollower(Node):
 
         # --- Nav2 ActionClient ---
         self.nav_client = ActionClient(self, NavigateToPose, 'navigate_to_pose')
+        self.get_logger().info('Waiting for Nav2 action server...')
+        self.nav_client.wait_for_server()
+        self.get_logger().info('Nav2 action server ready.')
         
         self.PLC_sub = self.create_subscription(String, 'hmi/unified_status', self.listener_callback, 10)
         self.box_location  = None
@@ -96,6 +87,17 @@ class WaypointFollower(Node):
             
         if prev_status != self.box_location:
             self.get_logger().info(f'Box status updated: {self.box_location}')
+
+    
+    def make_pose(self, x: float, y: float, yaw: float) -> PoseStamped:
+        ps = PoseStamped()
+        ps.header.frame_id = 'map'
+        ps.pose.position.x = x
+        ps.pose.position.y = y
+        half = yaw * 0.5
+        ps.pose.orientation.z = math.sin(half)
+        ps.pose.orientation.w = math.cos(half)
+        return ps
 
     # --- Send MoveIt arm goal ---
     def send_and_wait_arm(self, joints: List[float]) -> bool:
@@ -154,6 +156,7 @@ class WaypointFollower(Node):
         goal = NavigateToPose.Goal()
         goal.pose = pose
 
+        # All my homies hate feedback
         # def feedback_cb(fb):
         #     try:
         #         dist = fb.feedback.distance_remaining
@@ -185,14 +188,14 @@ class WaypointFollower(Node):
         wait_seconds = 2
 
         # --- Precalculate poses ---
-        big_box_pos = make_pose(*conveyor_big)
-        medium_box_pos = make_pose(*conveyor_medium)
-        small_box_pos = make_pose(*conveyor_small)
-        conv_appr = make_pose(*conveyor_approach_pos)
+        big_box_pos = self.make_pose(*conveyor_big)
+        medium_box_pos = self.make_pose(*conveyor_medium)
+        small_box_pos = self.make_pose(*conveyor_small)
+        conv_appr = self.make_pose(*conveyor_approach_pos)
         
-        drop_pos = make_pose(*store_pos)
-        pos_drop_pos = make_pose(*post_store_pos)
-        drop_appr = make_pose(*store_approach_pos)
+        drop_pos = self.make_pose(*store_pos)
+        pos_drop_pos = self.make_pose(*post_store_pos)
+        drop_appr = self.make_pose(*store_approach_pos)
 
         self.get_logger().info('Starting navigation sequence...')
         if not self.send_and_wait_arm(movement_arm): raise Exception("ARM Planner error 1")
@@ -223,18 +226,15 @@ class WaypointFollower(Node):
             if not self.send_and_wait_arm(pickupC_arm): raise Exception("ARM Planner error 2")
             self.send_and_wait_movement(small_box_pos)
 
-        rclpy.spin_once(self, timeout_sec=wait_seconds) 
         
         if not self.send_and_wait_arm(movement_arm): raise Exception("ARM Planner error 3")
         self.send_and_wait_movement(drop_appr)
         
         if not self.send_and_wait_arm(readyForStore_arm): raise Exception("ARM Planner error 4")
-        rclpy.spin_once(self, timeout_sec=wait_seconds) 
 
         self.send_and_wait_movement(drop_pos)
         
         if not self.send_and_wait_arm(post_store_arm): raise Exception("ARM Planner error 5.1")
-        rclpy.spin_once(self, timeout_sec=wait_seconds) 
         self.send_and_wait_movement(pos_drop_pos)
 
 
@@ -244,8 +244,6 @@ class WaypointFollower(Node):
 
         self.get_logger().info('Navigation sequence complete.')
         
-        
-
 
 def main():
     rclpy.init()
