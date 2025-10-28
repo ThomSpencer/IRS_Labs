@@ -8,7 +8,20 @@ sudo apt install ros-humble-rqt-tf-tree
 source /opt/ros/humble/setup.bash 
 ```
 
-# Make Package
+# Run Pineapple Grand Challenge
+For those marking this repo is all of the ros2 code the pineapple grand challenge code is pineapple_box_sorter.
+```bash
+colcon build --packages-select pineapple_box_sorter
+ros2 launch pineapple_box_sorter nav_launch.py
+```
+#### Then in a separate terminal
+```bash
+ros2 run pineapple_box_sorter hs_waypoint_follower
+```
+
+<br><br><br><br><br>
+
+# To make a package
 ```bash
 ros2 pkg create --build-type ament_python --license Apache-2.0 --node-name\
 {NAME_OF_NODE} {NAME_OF_PACKAGE}
@@ -22,7 +35,7 @@ colcon build --packages-select {NAME_OF_PACKAGE}
 source install/local_setup.bash 
 ros2 run {NAME_OF_PACKAGE} {NAME_OF_NODE}
 ## OR
-ros2 launch {NAME_OF_PACKAGE} {NAME_OF_NODE}
+ros2 launch {NAME_OF_PACKAGE} {PATH_TO_LAUNCH_FILE}
 ```
 
 # Run Mapping node
@@ -55,11 +68,4 @@ ros2 run rqt_tf_tree rqt_tf_tree
 # Image Viewer
 ```bash
 ros2 run rqt_image_view rqt_image_view
-```
-
-# Box Sorter
-Run in separate terminals
-```bash
-ros2 launch pineapple_box_sorter nav_launch.py 
-ros2 run pineapple_box_sorter hs_waypoint_follower 
 ```
