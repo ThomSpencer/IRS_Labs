@@ -12,17 +12,6 @@ from moveit_msgs.action import MoveGroup
 from moveit_msgs.msg import MotionPlanRequest, Constraints, JointConstraint
 from std_msgs.msg import String
 
-
-# --- Hard-coded positions ---
-conveyor_approach_pos = [5.58, -3.21, math.pi/2]
-conveyor_big_pos = [5.50, -1.32, math.pi/2]
-conveyor_medium_pos = [5.58, -1.14, math.pi/2]
-conveyor_small_pos = [5.63, 1.41, math.pi/2]
-
-store_approach_pos = [31.0, -1.5, -math.pi/2]
-store_pos = [31.0, -5.25, -math.pi/2]
-post_store_pos = [31.0, -5.25, math.pi]
-
 # --- Hard-coded arm angles (radians) ---
 home_arm = [0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
 movement_arm = [0.0, 0.0, 0.0, 0.0, -1.5708, 0.0]
@@ -34,6 +23,27 @@ pickupC_arm = [math.pi/2, 0.710865, 1.209, -0.401426, 1.5708, 0.0]
 store_arm = [0.0, 0.0, 1.39626, 0.0, 1.72788, 0.0]
 post_store_arm = [0.0, -math.pi/6, 5*math.pi/9, 0.0, math.pi/2, 0.0]
 
+def make_pose(x: float, y: float, yaw: float) -> PoseStamped:
+        ps = PoseStamped()
+        ps.header.frame_id = 'map'
+        ps.pose.position.x = x
+        ps.pose.position.y = y
+        half = yaw * 0.5
+        ps.pose.orientation.z = math.sin(half)
+        ps.pose.orientation.w = math.cos(half)
+        return ps
+
+# --- Hard-coded Precalculated positions ---
+big_box_pos = make_pose(*[5.50, -1.32, math.pi/2])
+medium_box_pos = make_pose(*[5.58, -1.14, math.pi/2])
+small_box_pos = make_pose(*[5.63, 1.41, math.pi/2])
+conv_appr = make_pose(*[5.58, -3.21, math.pi/2])
+
+drop_pos = make_pose(*[31.0, -5.25, -math.pi/2])
+post_drop_pos = make_pose(*[31.0, -5.25, math.pi])
+drop_appr = make_pose(*[31.0, -1.5, -math.pi/2])
+
+# Constants
 JOINT_NAMES: List[str] = ['joint_1','joint_2','joint_3','joint_4','joint_5','joint_6']
 PLANNING_GROUP: str = 'tmr_arm'
 MOVE_ACTION_NAME: str = '/move_action'
@@ -54,9 +64,11 @@ class WaypointFollower(Node):
         self.nav_client.wait_for_server()
         self.get_logger().info('Nav2 action server ready.')
         
+        # --- PLC Subscription ---
         self.PLC_sub = self.create_subscription(String, 'hmi/unified_status', self.listener_callback, 10)
         self.box_location  = None
         
+
     def listener_callback(self, msg):
         jsonData = json.loads(msg.data)
         boxWeight = jsonData['box']['weight_raw']
@@ -80,6 +92,7 @@ class WaypointFollower(Node):
             # Medium Box
             self.box_location = 'med'
         else:
+            # No Box
             self.box_location = None  # Unknown weight, reset box location
             
         if prev_status != self.box_location:
@@ -108,17 +121,21 @@ class WaypointFollower(Node):
         self.get_logger().info(f"Arm result status: {res.status}")
         return res.status == 4  # STATUS_SUCCEEDED
 
+
     # --- Build MoveGroup goal ---
     def _goal_from_joints(self, joints: List[float]) -> MoveGroup.Goal:
+        # Create goal
         goal = MoveGroup.Goal()
         req = MotionPlanRequest()
 
+        # Settings
         req.group_name = PLANNING_GROUP
         req.num_planning_attempts = 10
         req.allowed_planning_time = 5.0
         req.max_velocity_scaling_factor = 0.5
         req.max_acceleration_scaling_factor = 0.5
 
+        # Set positions of the arm as contraints
         cs = Constraints()
         for name, val in zip(JOINT_NAMES, joints):
             jc = JointConstraint()
@@ -132,19 +149,8 @@ class WaypointFollower(Node):
         req.goal_constraints.append(cs) # type: ignore
         goal.request = req
         goal.planning_options.plan_only = False
-        return goal
+        return goal        
 
-
-    def make_pose(self, x: float, y: float, yaw: float) -> PoseStamped:
-            ps = PoseStamped()
-            ps.header.frame_id = 'map'
-            ps.pose.position.x = x
-            ps.pose.position.y = y
-            half = yaw * 0.5
-            ps.pose.orientation.z = math.sin(half)
-            ps.pose.orientation.w = math.cos(half)
-            return ps
-        
 
     # --- Send navigation goal ---
     def send_and_wait_movement(self, pose: PoseStamped) -> bool:
@@ -163,6 +169,7 @@ class WaypointFollower(Node):
         #     except Exception:
         #         pass
 
+        # No need to calculate goal positions are it is precalculated
         send_future = self.nav_client.send_goal_async(goal)#feedback_callback=feedback_cb)
         rclpy.spin_until_future_complete(self, send_future)
         handle = send_future.result()
@@ -171,6 +178,7 @@ class WaypointFollower(Node):
             self.get_logger().error('Navigation goal rejected!')
             return False
 
+        # Wait for goal to be completed
         result_future = handle.get_result_async()
         rclpy.spin_until_future_complete(self, result_future)
         result = result_future.result()
@@ -182,19 +190,10 @@ class WaypointFollower(Node):
         self.get_logger().info('Navigation goal reached.')
         return True
 
+
     # --- Run the waypoint sequence ---
     def run_sequence(self):
         wait_seconds = 2
-
-        # --- Precalculate poses ---
-        big_box_pos = self.make_pose(*conveyor_big_pos)
-        medium_box_pos = self.make_pose(*conveyor_medium_pos)
-        small_box_pos = self.make_pose(*conveyor_small_pos)
-        conv_appr = self.make_pose(*conveyor_approach_pos)
-        
-        drop_pos = self.make_pose(*store_pos)
-        post_drop_pos = self.make_pose(*post_store_pos)
-        drop_appr = self.make_pose(*store_approach_pos)
 
         self.get_logger().info('Starting navigation sequence...')
         if not self.send_and_wait_arm(movement_arm): raise Exception("ARM Planner error 1")
@@ -205,10 +204,8 @@ class WaypointFollower(Node):
             self._logger.info('waiting for box location...')
             rclpy.spin_once(self, timeout_sec=2.0)
         box = self.box_location
-
         self.get_logger().info(f'Box detected: {box}')
     
-        
         if box == 'big':
             self.get_logger().info('Big box detected, moving to conveyor A.')
             if not self.send_and_wait_arm(pickupA_arm): raise Exception("ARM Planner error 2")
@@ -224,21 +221,21 @@ class WaypointFollower(Node):
             if not self.send_and_wait_arm(pickupC_arm): raise Exception("ARM Planner error 2")
             self.send_and_wait_movement(small_box_pos)
 
-        
+        self.get_logger().info('Moving to dropoff.')
         if not self.send_and_wait_arm(movement_arm): raise Exception("ARM Planner error 3")
         self.send_and_wait_movement(drop_appr)
         
         if not self.send_and_wait_arm(store_arm): raise Exception("ARM Planner error 4")
 
         self.send_and_wait_movement(drop_pos)
+        self.get_logger().info('Box delivered.')
         
-        if not self.send_and_wait_arm(post_store_arm): raise Exception("ARM Planner error 5.1")
+        if not self.send_and_wait_arm(post_store_arm): raise Exception("ARM Planner error 5")
         self.send_and_wait_movement(post_drop_pos)
-
+        self.get_logger().info('Moving back to home.')
 
         if not self.send_and_wait_arm(movement_arm): raise Exception("ARM Planner error 6")
         self.send_and_wait_movement(conv_appr)
-        #if not self.send_and_wait_arm(home_arm): raise Exception("ARM Planner error 7")
 
         self.get_logger().info('Navigation sequence complete.')
         
@@ -250,10 +247,12 @@ def main():
     try:
         while inp == None or inp == '\n' or inp == '':
             node.run_sequence()
-            inp = None #input("Press enter to go again: ")
+            inp = None # Force sequence to run in a loop
+            #input("Press enter to go again: ")
     except Exception as e:
         node.get_logger().error(f'Sequence aborted: {e}')
     finally:
+        node.get_logger().info('Shutting Down')
         node.destroy_node()
         rclpy.shutdown()
 
